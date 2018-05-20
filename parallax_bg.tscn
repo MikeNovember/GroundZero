@@ -5,7 +5,7 @@
 [ext_resource path="res://scroll_bg_cloud_2.png" type="Texture" id=3]
 [ext_resource path="res://scroll_bg_cloud_3.png" type="Texture" id=4]
 
-[node name="parallax_bg" type="ParallaxBackground" index="0"]
+[node name="parallax_bg" type="ParallaxBackground"]
 
 layer = -1
 offset = Vector2( 0, 0 )

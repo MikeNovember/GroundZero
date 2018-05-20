@@ -29,7 +29,7 @@ tracks/1/path = NodePath("sprite:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/keys = {
 "times": PoolRealArray( 0, 3.2 ),
 "transitions": PoolRealArray( 0.5, 1 ),
@@ -43,7 +43,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 2.6, 3.4 ),
+"times": PoolRealArray( 0.0299999, 0.36 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
@@ -55,7 +55,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 2.8 ),
+"times": PoolRealArray( 0, 0.11 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -67,7 +67,7 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 2.8, 3.4 ),
+"times": PoolRealArray( 0.12, 0.37 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 1.0, 4.0 ]
@@ -91,7 +91,7 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 2.9 ),
+"times": PoolRealArray( 0.0800002 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
@@ -205,7 +205,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Angular Velocity", "Animation", "Color", "Damping", "Emission Shape", "Flags", "Gravity", "Hue Variation", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Radial Accel", "Scale", "Spread", "Tangential Accel" ]
 
-[node name="enemy" type="KinematicBody2D"]
+[node name="enemy" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -213,8 +213,6 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Pickable", "Transform", "Z", "collision" ]
-motion = Vector2( 0, 0 )
-cycle = 1.0
 
 [node name="enabler" type="VisibilityEnabler2D" parent="." index="0"]
 
@@ -243,6 +241,7 @@ _sections_unfolded = [ "Playback Options", "playback" ]
 
 [node name="sprite" type="Sprite" parent="." index="2"]
 
+self_modulate = Color( 1, 1, 1, 1 )
 material = SubResource( 4 )
 texture = ExtResource( 2 )
 flip_h = true
@@ -255,41 +254,7 @@ position = Vector2( -0.00525069, -0.727495 )
 rotation = -1.5708
 shape = SubResource( 5 )
 
-[node name="detect_floor_left" type="RayCast2D" parent="." index="4"]
-
-position = Vector2( -33.2868, -9.34363 )
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 0, 45 )
-collision_mask = 1
-
-[node name="detect_wall_left" type="RayCast2D" parent="." index="5"]
-
-position = Vector2( -12.1361, -0.739977 )
-rotation = 1.5708
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 0, 20 )
-collision_mask = 1
-
-[node name="detect_wall_right" type="RayCast2D" parent="." index="6"]
-
-position = Vector2( 3.2788, -0.381488 )
-rotation = -1.5708
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 0, 20 )
-collision_mask = 1
-
-[node name="detect_floor_right" type="RayCast2D" parent="." index="7"]
-
-position = Vector2( 29.1987, -9.34363 )
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 0, 45 )
-collision_mask = 1
-
-[node name="explosion" type="Particles2D" parent="." index="8"]
+[node name="explosion" type="Particles2D" parent="." index="4"]
 
 self_modulate = Color( 1, 1, 1, 0.12 )
 material = SubResource( 6 )
@@ -313,7 +278,7 @@ h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Visibility" ]
 
-[node name="sound_hit" type="AudioStreamPlayer2D" parent="." index="9"]
+[node name="sound_hit" type="AudioStreamPlayer2D" parent="." index="5"]
 
 stream = ExtResource( 4 )
 volume_db = 0.0
@@ -323,7 +288,7 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
-[node name="sound_explode" type="AudioStreamPlayer2D" parent="." index="10"]
+[node name="sound_explode" type="AudioStreamPlayer2D" parent="." index="6"]
 
 stream = ExtResource( 5 )
 volume_db = 0.0
