@@ -10,6 +10,8 @@ const SHOOT_TIME_SHOW_WEAPON = 0.2
 
 var linear_vel = Vector2()
 
+var coins = 5
+
 #cache the sprite here for fast access (we will set scale to flip it often)
 onready var sprite = $sprite
 
@@ -35,10 +37,14 @@ func _physics_process(delta):
 	linear_vel.x = lerp(linear_vel.x, target_speed, 0.1)
 
 	# Shooting
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_just_pressed("shoot") and coins > 0:
 		var bullet = preload("res://bullet.tscn").instance()
 		bullet.position = $sprite/bullet_shoot.global_position #use node for shoot position
 		bullet.linear_velocity = Vector2(0, BULLET_VELOCITY)
 		bullet.add_collision_exception_with(self) # don't want player to collide with bullet
 		get_parent().add_child(bullet) #don't want bullet to move with me, so add it as child of parent
 		$sound_shoot.play()
+		coins -= 1
+
+func on_coin_picked():
+	coins += 1
