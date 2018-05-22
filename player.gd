@@ -1,7 +1,11 @@
 extends KinematicBody2D
 
+signal win
+signal lose
+
+const FLOOR_NORMAL = Vector2(0, -1)
 const MIN_ONAIR_TIME = 0.1
-const WALK_SPEED = 250 # pixels/sec
+const WALK_SPEED = 300 # pixels/sec
 const JUMP_SPEED = 480
 const FALLING_SPEED = 200
 const SIDING_CHANGE_SPEED = 10
@@ -18,11 +22,12 @@ onready var sprite = $sprite
 func _physics_process(delta):
 	### MOVEMENT ###
 	# Move and Slide
-	linear_vel = move_and_slide(linear_vel)
+	linear_vel = move_and_slide(linear_vel, FLOOR_NORMAL)
 	linear_vel.y = FALLING_SPEED
 	# Detect Floor
-	#if is_on_floor():
-	#	game over
+	if is_on_floor():
+		print('on floor')
+		emit_signal("win")
 
 	### CONTROL ###
 
