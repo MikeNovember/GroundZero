@@ -111,6 +111,7 @@ tracks/2/keys = {
 
 [node name="bullet" type="RigidBody2D"]
 
+editor/display_folded = true
 material = SubResource( 1 )
 input_pickable = false
 collision_layer = 1
