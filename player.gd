@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 signal win
 signal lose
+signal shoot
 
 const FLOOR_NORMAL = Vector2(0, -1)
 const MIN_ONAIR_TIME = 0.1
@@ -14,7 +15,7 @@ const SHOOT_TIME_SHOW_WEAPON = 0.2
 
 var linear_vel = Vector2()
 
-var coins = 5
+var coins = 5;
 
 #cache the sprite here for fast access (we will set scale to flip it often)
 onready var sprite = $sprite
@@ -50,6 +51,7 @@ func _physics_process(delta):
 		get_parent().add_child(bullet) #don't want bullet to move with me, so add it as child of parent
 		$sound_shoot.play()
 		coins -= 1
+		emit_signal('shoot')
 
 func on_coin_picked():
 	coins += 1

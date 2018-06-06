@@ -241,7 +241,6 @@ _sections_unfolded = [ "Playback Options", "playback" ]
 
 [node name="sprite" type="Sprite" parent="." index="2"]
 
-self_modulate = Color( 1, 1, 1, 1 )
 material = SubResource( 4 )
 texture = ExtResource( 2 )
 flip_h = true
