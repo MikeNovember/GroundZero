@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://stage.gd" type="Script" id=1]
 [ext_resource path="res://tileset.tres" type="TileSet" id=2]
@@ -10,6 +10,12 @@
 [ext_resource path="res://HUD.gd" type="Script" id=8]
 [ext_resource path="res://fonts/extra_font.tres" type="DynamicFont" id=9]
 [ext_resource path="res://hud/bullet-64.png" type="Texture" id=10]
+[ext_resource path="res://WorldCompleted.gd" type="Script" id=11]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 9.68749, 10 )
 
 [node name="stage" type="Node" index="0"]
 
@@ -307,7 +313,7 @@ valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Visibility", "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "Margin", "Visibility", "custom_fonts" ]
 
 [node name="YouWon" type="Label" parent="HUD" index="1"]
 
@@ -325,14 +331,38 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "YouWon"
+custom_colors/font_color = Color( 1, 0.976563, 0.976563, 1 )
+text = "You Won"
 align = 1
 valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Visibility", "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "Margin", "Visibility", "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="FinalScore" type="Label" parent="HUD/YouWon" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 800.0
+margin_bottom = 360.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 9 )
+text = "5"
+align = 1
+valign = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin", "Material", "Visibility", "custom_fonts" ]
 
 [node name="Score" type="Label" parent="HUD" index="2"]
 
@@ -355,7 +385,7 @@ text = "5"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Margin", "custom_fonts" ]
 
 [node name="TextureRect" type="TextureRect" parent="HUD" index="3"]
 
@@ -375,6 +405,25 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 10 )
 stretch_mode = 0
+
+[node name="WorldCompleted" type="Area2D" parent="." index="7"]
+
+position = Vector2( 928.232, 7794.8 )
+scale = Vector2( 32.0442, -6.32247 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCompleted" index="0"]
+
+position = Vector2( -0.713431, -13.608 )
+scale = Vector2( 2.93365, 2.04677 )
+shape = SubResource( 1 )
 
 [connection signal="coin_picked" from="coins/coin" to="player" method="_on_coin_coin_picked"]
 

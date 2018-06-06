@@ -28,7 +28,7 @@ func _physics_process(delta):
 	# Detect Floor
 	if is_on_floor():
 		print('on floor')
-		emit_signal("win")
+		#emit_signal("win")
 
 	### CONTROL ###
 
