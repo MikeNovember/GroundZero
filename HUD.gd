@@ -9,6 +9,7 @@ func _on_win():
 
 func _on_lose():
 		$GameOver.visible = true
+		get_tree().paused = true
 
 func _on_coin_picked():
 	print("Picked here")

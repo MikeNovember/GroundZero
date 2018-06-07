@@ -271,6 +271,8 @@ _sections_unfolded = [ "Collision", "collision" ]
 
 [node name="enemies" type="Node" parent="." index="3"]
 
+editor/display_folded = true
+
 [node name="enemy 5" parent="enemies" index="0" instance=ExtResource( 5 )]
 
 position = Vector2( 76.3378, 1432.03 )
@@ -349,6 +351,7 @@ bus = "Master"
 
 [node name="HUD" type="CanvasLayer" parent="." index="6"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -474,6 +477,7 @@ stretch_mode = 0
 
 [node name="WorldCompleted" type="Area2D" parent="." index="7"]
 
+editor/display_folded = true
 position = Vector2( 928.232, 7794.8 )
 scale = Vector2( 32.0442, -6.32247 )
 input_pickable = true

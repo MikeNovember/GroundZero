@@ -20,13 +20,21 @@ var coins = 5;
 #cache the sprite here for fast access (we will set scale to flip it often)
 onready var sprite = $sprite
 
+func _is_on_left_edge(position_x,velocity):
+	return (position_x <= 25 and linear_vel.x < 0)
+func _is_on_right_edge(position_x,velocity):
+	return (position_x >= 785 and linear_vel.x > 0)
 
 func _physics_process(delta):
 	### MOVEMENT ###
-	# Move and Slide
+	var pos = get_global_position()
+	
+	if _is_on_left_edge(pos.x,linear_vel.x) or _is_on_right_edge(pos.x,linear_vel.x):
+		linear_vel.x = 0
+	
 	linear_vel = move_and_slide(linear_vel, FLOOR_NORMAL)
 	linear_vel.y = FALLING_SPEED
-	
+
 	if is_on_floor() || is_on_ceiling() || is_on_wall():
 		emit_signal("lose")
 
