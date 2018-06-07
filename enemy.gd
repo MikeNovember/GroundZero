@@ -4,6 +4,8 @@ const WALK_SPEED = 140
 const STATE_WALKING = 0
 const STATE_KILLED = 1
 
+signal enemy_killed
+
 var linear_velocity = Vector2()
 var direction = 1
 var anim=""
@@ -35,3 +37,7 @@ func _physics_process(delta):
 
 func hit_by_bullet():
 	state = STATE_KILLED
+	set_collision_layer_bit(1,false)
+	set_collision_layer_bit(0,false)
+	emit_signal("enemy_killed")
+	
