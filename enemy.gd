@@ -37,4 +37,7 @@ func _physics_process(delta):
 
 func hit_by_bullet():
 	state = STATE_KILLED
+	set_collision_layer_bit(1,false)
+	set_collision_layer_bit(0,false)
 	emit_signal("enemy_killed")
+	

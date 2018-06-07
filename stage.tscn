@@ -271,8 +271,6 @@ _sections_unfolded = [ "Collision", "collision" ]
 
 [node name="enemies" type="Node" parent="." index="3"]
 
-editor/display_folded = true
-
 [node name="enemy 5" parent="enemies" index="0" instance=ExtResource( 5 )]
 
 position = Vector2( 76.3378, 1432.03 )
