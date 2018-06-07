@@ -20,17 +20,15 @@ var coins = 5;
 #cache the sprite here for fast access (we will set scale to flip it often)
 onready var sprite = $sprite
 
+
 func _physics_process(delta):
 	### MOVEMENT ###
 	# Move and Slide
 	linear_vel = move_and_slide(linear_vel, FLOOR_NORMAL)
 	linear_vel.y = FALLING_SPEED
-	# Detect Floor
-	if is_on_floor():
-		print('on floor')
-		#emit_signal("win")
-
-	### CONTROL ###
+	
+	if is_on_floor() || is_on_ceiling() || is_on_wall():
+		emit_signal("lose")
 
 	# Horizontal Movement
 	var target_speed = 0

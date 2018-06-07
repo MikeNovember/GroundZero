@@ -41,7 +41,7 @@ collision_mask = 1
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 327697, 536870921, 0, 851967, 2, 0, 786445, 2, 0, 917503, 2, 0, 851981, 2, 0, 983039, 2, 0, 917517, 2, 0, 1048575, 2, 0, 983053, 2, 0, 1114111, 2, 0, 1048589, 2, 0, 1179647, 2, 0, 1114125, 2, 0, 1245183, 2, 0, 1179661, 2, 0, 1310719, 2, 0, 1245197, 2, 0, 1376255, 2, 0, 1310733, 2, 0, 1441791, 2, 0, 1376269, 2, 0, 1507327, 2, 0, 1441805, 2, 0, 1572863, 2, 0, 1507341, 2, 0, 1638399, 2, 0, 1572877, 2, 0, 1703935, 2, 0, 1638413, 2, 0, 1769471, 2, 0, 1703949, 2, 0, 1835007, 2, 0, 1769485, 2, 0, 1900543, 2, 0, 1835021, 2, 0, 1966079, 2, 0, 1900557, 2, 0, 2031615, 2, 0, 1966093, 2, 0, 2097151, 2, 0, 2031629, 2, 0, 2162687, 2, 0, 2097165, 2, 0, 2228223, 2, 0, 2162701, 2, 0, 2293759, 2, 0, 2228237, 2, 0, 2359295, 2, 0, 2293773, 2, 0, 2424831, 2, 0, 2359309, 2, 0, 2490367, 2, 0, 2424845, 2, 0, 2555903, 2, 0, 2490381, 2, 0, 2621439, 2, 0, 2555917, 2, 0, 2686975, 2, 0, 2621453, 2, 0, 2752511, 2, 0, 2686989, 2, 0, 2818047, 2, 0, 2752525, 2, 0, 2883583, 2, 0, 2818061, 2, 0, 2949119, 2, 0, 2883597, 2, 0, 3014655, 2, 0, 2949133, 2, 0, 3080191, 2, 0, 3014669, 2, 0, 3145727, 2, 0, 3080205, 2, 0, 3211263, 2, 0, 3145741, 2, 0, 3276799, 2, 0, 3211277, 2, 0, 3342335, 2, 0, 3276813, 2, 0, 3407871, 2, 0, 3342349, 2, 0, 3473407, 2, 0, 3407885, 2, 0, 3538943, 2, 0, 3473421, 2, 0, 3604479, 2, 0, 3538957, 2, 0, 3670015, 2, 0, 3604493, 2, 0, 3735551, 2, 0, 3670029, 2, 0, 3801087, 2, 0, 3735565, 2, 0, 3866623, 2, 0, 3801101, 2, 0, 3932159, 2, 0, 3866637, 2, 0, 3997695, 2, 0, 3932173, 2, 0, 4063231, 2, 0, 3997709, 2, 0, 4128767, 2, 0, 4063245, 2, 0, 4194303, 2, 0, 4128781, 2, 0, 4259839, 2, 0, 4194317, 2, 0, 4325375, 2, 0, 4259853, 2, 0, 4390911, 2, 0, 4325389, 2, 0, 4456447, 2, 0, 4390925, 2, 0, 4521983, 2, 0, 4456461, 2, 0, 4587519, 2, 0, 4521997, 2, 0, 4653055, 2, 0, 4587533, 2, 0, 4718591, 2, 0, 4653069, 2, 0, 4784127, 2, 0, 4718605, 2, 0, 4849663, 2, 0, 4784141, 2, 0, 4915199, 2, 0, 4849677, 2, 0, 4980735, 2, 0, 4915213, 2, 0, 5046271, 2, 0, 4980749, 2, 0, 5111807, 2, 0, 5046285, 2, 0, 5177343, 2, 0, 5111821, 2, 0, 5242879, 2, 0, 5177357, 2, 0, 5308415, 2, 0, 5242893, 2, 0, 5373951, 2, 0, 5308429, 2, 0, 5439487, 2, 0, 5373965, 2, 0, 5505023, 2, 0, 5439501, 2, 0, 5570559, 2, 0, 5505037, 2, 0, 5636095, 2, 0, 5570573, 2, 0, 5701631, 2, 0, 5636109, 2, 0, 5767167, 2, 0, 5701645, 2, 0, 5832703, 2, 0, 5767181, 2, 0, 5898239, 2, 0, 5832717, 2, 0, 5963775, 2, 0, 5898253, 2, 0, 6029311, 2, 0, 5963789, 2, 0, 6094847, 2, 0, 6029325, 2, 0, 6160383, 2, 0, 6094861, 2, 0, 6225919, 2, 0, 6160397, 2, 0, 6291455, 2, 0, 6225933, 2, 0, 6356991, 2, 0, 6291469, 2, 0, 6422527, 2, 0, 6357005, 2, 0, 6488063, 2, 0, 6422541, 2, 0, 6553599, 2, 0, 6488077, 2, 0, 6619135, 2, 0, 6553613, 2, 0, 6684671, 2, 0, 6619149, 2, 0, 6750207, 2, 0, 6684685, 2, 0, 6815743, 2, 0, 6750221, 2, 0, 6881279, 2, 0, 6815757, 2, 0, 6946815, 2, 0, 6881293, 2, 0, 7012351, 2, 0, 6946829, 2, 0, 7077887, 2, 0, 7012365, 2, 0, 7143423, 2, 0, 7077901, 2, 0, 7208959, 2, 0, 7143437, 2, 0, 7274495, 2, 0, 7208973, 2, 0, 7340031, 2, 0, 7274509, 2, 0, 7405567, 2, 0, 7340045, 2, 0, 7471103, 2, 0, 7405581, 2, 0, 7536639, 2, 0, 7471117, 2, 0, 7602175, 2, 0, 7536653, 2, 0, 7667711, 2, 0, 7602189, 2, 0, 7733247, 2, 0, 7667725, 2, 0, 7798783, 2, 0, 7733261, 2, 0, 7864319, 2, 0, 7798797, 2, 0, 7929855, 2, 0, 7864333, 2, 0, 7995391, 2, 0, 7929869, 2, 0, 8060927, 2, 0, 7995405, 2, 0, 8126463, 2, 0, 8060941, 2, 0, 8191999, 2, 0, 8126477, 2, 0, 8257535, 2, 0, 8192013, 2, 0, 8323071, 2, 0, 8257549, 2, 0, 8388607, 2, 0, 8323085, 2, 0, 8454143, 2, 0, 8388621, 2, 0, 8519679, 2, 0, 8454157, 2, 0, 8585215, 2, 0, 8519693, 2, 0, 8650751, 2, 0, 8585229, 2, 0, 8716287, 2, 0, 8650765, 2, 0, 8781823, 2, 0, 8716301, 2, 0, 8847359, 2, 0, 8781837, 2, 0, 8912895, 2, 0, 8847373, 2, 0, 8978431, 2, 0, 8912909, 2, 0, 9043967, 2, 0, 8978445, 2, 0, 9109503, 2, 0, 9043981, 2, 0, 9175039, 0, 0, 9109504, 0, 0, 9109505, 0, 0, 9109506, 0, 0, 9109507, 0, 0, 9109508, 0, 0, 9109509, 0, 0, 9109510, 0, 0, 9109511, 0, 0, 9109512, 0, 0, 9109513, 0, 0, 9109514, 0, 0, 9109515, 0, 0, 9109516, 0, 0, 9109517, 2, 0 )
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Collision", "Visibility" ]
 __meta__ = {
 "_edit_lock_": true
 }
@@ -53,175 +53,221 @@ editor/display_folded = true
 [node name="coin" parent="coins" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( 413.34, 1213.49 )
+collision_layer = 4
 
 [node name="coin 2" parent="coins" index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 445.34, 1213.49 )
+collision_layer = 4
 
 [node name="coin 3" parent="coins" index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 477.34, 1213.49 )
+collision_layer = 4
 
 [node name="coin 4" parent="coins" index="3" instance=ExtResource( 3 )]
 
 position = Vector2( 490.593, 2535.34 )
+collision_layer = 4
 
 [node name="coin 5" parent="coins" index="4" instance=ExtResource( 3 )]
 
 position = Vector2( 246.689, 2380.14 )
+collision_layer = 4
 
 [node name="coin 6" parent="coins" index="5" instance=ExtResource( 3 )]
 
 position = Vector2( 537.349, 1509.32 )
+collision_layer = 4
 
 [node name="coin 7" parent="coins" index="6" instance=ExtResource( 3 )]
 
 position = Vector2( 586.593, 2035.26 )
+collision_layer = 4
 
 [node name="coin 8" parent="coins" index="7" instance=ExtResource( 3 )]
 
 position = Vector2( 308.201, 1992.15 )
+collision_layer = 4
 
 [node name="coin 9" parent="coins" index="8" instance=ExtResource( 3 )]
 
 position = Vector2( 240.21, 1596.87 )
+collision_layer = 4
 
 [node name="coin 10" parent="coins" index="9" instance=ExtResource( 3 )]
 
 position = Vector2( 450.785, 2829.82 )
+collision_layer = 4
 
 [node name="coin 11" parent="coins" index="10" instance=ExtResource( 3 )]
 
 position = Vector2( 686.607, 2712.16 )
+collision_layer = 4
 
 [node name="coin 12" parent="coins" index="11" instance=ExtResource( 3 )]
 
 position = Vector2( 250.531, 2746.65 )
+collision_layer = 4
 
 [node name="coin 13" parent="coins" index="12" instance=ExtResource( 3 )]
 
 position = Vector2( 596.037, 4601.09 )
+collision_layer = 4
 
 [node name="coin 14" parent="coins" index="13" instance=ExtResource( 3 )]
 
 position = Vector2( 284.704, 4554.18 )
+collision_layer = 4
 
 [node name="coin 15" parent="coins" index="14" instance=ExtResource( 3 )]
 
 position = Vector2( 247.259, 5458.29 )
+collision_layer = 4
 
 [node name="coin 16" parent="coins" index="15" instance=ExtResource( 3 )]
 
 position = Vector2( 311.257, 5458.29 )
+collision_layer = 4
 
 [node name="coin 17" parent="coins" index="16" instance=ExtResource( 3 )]
 
 position = Vector2( 375.257, 5458.29 )
+collision_layer = 4
 
 [node name="coin 18" parent="coins" index="17" instance=ExtResource( 3 )]
 
 position = Vector2( 375.257, 5394.29 )
+collision_layer = 4
 
 [node name="coin 19" parent="coins" index="18" instance=ExtResource( 3 )]
 
 position = Vector2( 311.257, 5394.29 )
+collision_layer = 4
 
 [node name="coin 20" parent="coins" index="19" instance=ExtResource( 3 )]
 
 position = Vector2( 247.259, 5394.29 )
+collision_layer = 4
 
 [node name="coin 21" parent="coins" index="20" instance=ExtResource( 3 )]
 
 position = Vector2( 149.257, 4375.23 )
+collision_layer = 4
 
 [node name="coin 22" parent="coins" index="21" instance=ExtResource( 3 )]
 
 position = Vector2( 309.53, 7058.84 )
+collision_layer = 4
 
 [node name="coin 23" parent="coins" index="22" instance=ExtResource( 3 )]
 
 position = Vector2( 158.547, 4367.92 )
+collision_layer = 4
 
 [node name="coin 24" parent="coins" index="23" instance=ExtResource( 3 )]
 
 position = Vector2( 166.507, 4356.66 )
+collision_layer = 4
 
 [node name="coin 25" parent="coins" index="24" instance=ExtResource( 3 )]
 
 position = Vector2( 167.837, 4344.71 )
+collision_layer = 4
 
 [node name="coin 26" parent="coins" index="25" instance=ExtResource( 3 )]
 
 position = Vector2( 156.556, 4336.08 )
+collision_layer = 4
 
 [node name="coin 27" parent="coins" index="26" instance=ExtResource( 3 )]
 
 position = Vector2( 148.596, 4345.38 )
+collision_layer = 4
 
 [node name="coin 28" parent="coins" index="27" instance=ExtResource( 3 )]
 
 position = Vector2( 308.203, 7026.33 )
+collision_layer = 4
 
 [node name="coin 29" parent="coins" index="28" instance=ExtResource( 3 )]
 
 position = Vector2( 299.579, 7034.96 )
+collision_layer = 4
 
 [node name="coin 30" parent="coins" index="29" instance=ExtResource( 3 )]
 
 position = Vector2( 311.557, 7060.03 )
 scale = Vector2( 1.27066, 1.43095 )
+collision_layer = 4
 
 [node name="coin 31" parent="coins" index="30" instance=ExtResource( 3 )]
 
 position = Vector2( 235.488, 3373.91 )
+collision_layer = 4
 
 [node name="coin 31 2" parent="coins" index="31" instance=ExtResource( 3 )]
 
 position = Vector2( 510.613, 3350.45 )
+collision_layer = 4
 
 [node name="coin 31 3" parent="coins" index="32" instance=ExtResource( 3 )]
 
 position = Vector2( 644.988, 3561.57 )
+collision_layer = 4
 
 [node name="coin 31 4" parent="coins" index="33" instance=ExtResource( 3 )]
 
 position = Vector2( 316.571, 3157.43 )
+collision_layer = 4
 
 [node name="coin 31 5" parent="coins" index="34" instance=ExtResource( 3 )]
 
 position = Vector2( 627.905, 3145.7 )
+collision_layer = 4
 
 [node name="coin 31 6" parent="coins" index="35" instance=ExtResource( 3 )]
 
 position = Vector2( 279.472, 2930.67 )
+collision_layer = 4
 
 [node name="coin 32" parent="coins" index="36" instance=ExtResource( 3 )]
 
 position = Vector2( 501.523, 3889.22 )
+collision_layer = 4
 
 [node name="coin 31 7" parent="coins" index="37" instance=ExtResource( 3 )]
 
 position = Vector2( 342.669, 4229.37 )
+collision_layer = 4
 
 [node name="coin 31 7 2" parent="coins" index="38" instance=ExtResource( 3 )]
 
 position = Vector2( 207.274, 3971.33 )
+collision_layer = 4
 
 [node name="coin 31 7 3" parent="coins" index="39" instance=ExtResource( 3 )]
 
 position = Vector2( 570.877, 4106.72 )
+collision_layer = 4
 
 [node name="coin 31 7 4" parent="coins" index="40" instance=ExtResource( 3 )]
 
 position = Vector2( 600.711, 2300.43 )
+collision_layer = 4
 
 [node name="coin 31 7 5" parent="coins" index="41" instance=ExtResource( 3 )]
 
 position = Vector2( 384.232, 3661.01 )
+collision_layer = 4
 
 [node name="player" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 251.684, 1045.6 )
+collision_layer = 14
+collision_mask = 14
+collision/safe_margin = 0.075
+_sections_unfolded = [ "Collision", "collision" ]
 
 [node name="enemies" type="Node" parent="." index="3"]
 
@@ -230,46 +276,68 @@ editor/display_folded = true
 [node name="enemy 5" parent="enemies" index="0" instance=ExtResource( 5 )]
 
 position = Vector2( 76.3378, 1432.03 )
+collision_layer = 3
+collision/safe_margin = 0.075
 
 [node name="enemy 6" parent="enemies" index="1" instance=ExtResource( 5 )]
 
 position = Vector2( 571.667, 1676.32 )
+collision_layer = 3
+collision/safe_margin = 0.075
 
 [node name="enemy 7" parent="enemies" index="2" instance=ExtResource( 5 )]
 
 position = Vector2( 366.473, 2173.92 )
+collision_layer = 3
+collision/safe_margin = 0.075
 
 [node name="enemy 8" parent="enemies" index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 163.943, 1674.32 )
+collision_layer = 3
+collision/safe_margin = 0.075
 
 [node name="enemy 9" parent="enemies" index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 338.39, 1826.63 )
+collision_layer = 3
+collision/safe_margin = 0.075
 
 [node name="enemy 10" parent="enemies" index="5" instance=ExtResource( 5 )]
 
 position = Vector2( 159.468, 2475.24 )
+collision_layer = 3
+collision/safe_margin = 0.075
 
 [node name="enemy 11" parent="enemies" index="6" instance=ExtResource( 5 )]
 
 position = Vector2( 353.983, 2706.29 )
+collision_layer = 3
+collision/safe_margin = 0.075
 
 [node name="enemy 12" parent="enemies" index="7" instance=ExtResource( 5 )]
 
 position = Vector2( 318.254, 2484.96 )
+collision_layer = 3
+collision/safe_margin = 0.075
 
 [node name="enemy 13" parent="enemies" index="8" instance=ExtResource( 5 )]
 
 position = Vector2( 520.742, 2485.83 )
+collision_layer = 3
+collision/safe_margin = 0.075
 
 [node name="enemy 14" parent="enemies" index="9" instance=ExtResource( 5 )]
 
 position = Vector2( 666.449, 2485.67 )
+collision_layer = 3
+collision/safe_margin = 0.075
 
 [node name="enemy 15" parent="enemies" index="10" instance=ExtResource( 5 )]
 
 position = Vector2( 370.19, 2886.51 )
+collision_layer = 3
+collision/safe_margin = 0.075
 
 [node name="parallax_bg" parent="." index="4" instance=ExtResource( 6 )]
 
@@ -306,14 +374,14 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.980469, 1, 0.996796, 1 )
 text = "Game Over"
 align = 1
 valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Margin", "Visibility", "custom_fonts" ]
+_sections_unfolded = [ "Anchor", "Margin", "Visibility", "custom_colors", "custom_fonts" ]
 
 [node name="YouWon" type="Label" parent="HUD" index="1"]
 
@@ -415,9 +483,11 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+collision_layer = 8
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 11 )
+_sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCompleted" index="0"]
 
