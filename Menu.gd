@@ -63,6 +63,8 @@ func _unhandled_input(event):
 		if Input.is_key_pressed(KEY_ENTER):
 			if labels[currentLabel].get_name() == "Resume":
 				_on_resume()
+			elif labels[currentLabel].get_name() == "Restart":
+				_on_restart()
 			else:
 				_on_exit()
 		
@@ -77,6 +79,11 @@ func _on_resume():
 
 func _on_exit():
 	get_tree().quit()
+	
+func _on_restart():
+	print("Restart")
+	get_tree().change_scene("res://stage.tscn")
+	self._on_resume()
 
 		
 	#if open:
