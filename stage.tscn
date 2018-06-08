@@ -2,8 +2,8 @@
 
 [ext_resource path="res://stage.gd" type="Script" id=1]
 [ext_resource path="res://enemy.tscn" type="PackedScene" id=2]
-[ext_resource path="res://tileset.tres" type="TileSet" id=3]
-[ext_resource path="res://coin.tscn" type="PackedScene" id=4]
+[ext_resource path="res://coin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://tileset.tres" type="TileSet" id=4]
 [ext_resource path="res://player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://parallax_bg.tscn" type="PackedScene" id=6]
 [ext_resource path="res://music.ogg" type="AudioStream" id=7]
@@ -21,13 +21,15 @@ extents = Vector2( 9.68749, 10 )
 
 script = ExtResource( 1 )
 Enemy = ExtResource( 2 )
+Coin = ExtResource( 3 )
 enemyCount = 100
+coinCount = 100
 
 [node name="tile_map" type="TileMap" parent="." index="0"]
 
 visible = false
 mode = 0
-tile_set = ExtResource( 3 )
+tile_set = ExtResource( 4 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 8
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -50,224 +52,11 @@ __meta__ = {
 
 [node name="coins" type="Node" parent="." index="1"]
 
-editor/display_folded = true
-
-[node name="coin" parent="coins" index="0" instance=ExtResource( 4 )]
-
-position = Vector2( 413.34, 1213.49 )
-collision_layer = 4
-
-[node name="coin 2" parent="coins" index="1" instance=ExtResource( 4 )]
-
-position = Vector2( 445.34, 1213.49 )
-collision_layer = 4
-
-[node name="coin 3" parent="coins" index="2" instance=ExtResource( 4 )]
-
-position = Vector2( 477.34, 1213.49 )
-collision_layer = 4
-
-[node name="coin 4" parent="coins" index="3" instance=ExtResource( 4 )]
-
-position = Vector2( 490.593, 2535.34 )
-collision_layer = 4
-
-[node name="coin 5" parent="coins" index="4" instance=ExtResource( 4 )]
-
-position = Vector2( 246.689, 2380.14 )
-collision_layer = 4
-
-[node name="coin 6" parent="coins" index="5" instance=ExtResource( 4 )]
-
-position = Vector2( 537.349, 1509.32 )
-collision_layer = 4
-
-[node name="coin 7" parent="coins" index="6" instance=ExtResource( 4 )]
-
-position = Vector2( 586.593, 2035.26 )
-collision_layer = 4
-
-[node name="coin 8" parent="coins" index="7" instance=ExtResource( 4 )]
-
-position = Vector2( 308.201, 1992.15 )
-collision_layer = 4
-
-[node name="coin 9" parent="coins" index="8" instance=ExtResource( 4 )]
-
-position = Vector2( 240.21, 1596.87 )
-collision_layer = 4
-
-[node name="coin 10" parent="coins" index="9" instance=ExtResource( 4 )]
-
-position = Vector2( 450.785, 2829.82 )
-collision_layer = 4
-
-[node name="coin 11" parent="coins" index="10" instance=ExtResource( 4 )]
-
-position = Vector2( 686.607, 2712.16 )
-collision_layer = 4
-
-[node name="coin 12" parent="coins" index="11" instance=ExtResource( 4 )]
-
-position = Vector2( 250.531, 2746.65 )
-collision_layer = 4
-
-[node name="coin 13" parent="coins" index="12" instance=ExtResource( 4 )]
-
-position = Vector2( 596.037, 4601.09 )
-collision_layer = 4
-
-[node name="coin 14" parent="coins" index="13" instance=ExtResource( 4 )]
-
-position = Vector2( 284.704, 4554.18 )
-collision_layer = 4
-
-[node name="coin 15" parent="coins" index="14" instance=ExtResource( 4 )]
-
-position = Vector2( 247.259, 5458.29 )
-collision_layer = 4
-
-[node name="coin 16" parent="coins" index="15" instance=ExtResource( 4 )]
-
-position = Vector2( 311.257, 5458.29 )
-collision_layer = 4
-
-[node name="coin 17" parent="coins" index="16" instance=ExtResource( 4 )]
-
-position = Vector2( 375.257, 5458.29 )
-collision_layer = 4
-
-[node name="coin 18" parent="coins" index="17" instance=ExtResource( 4 )]
-
-position = Vector2( 375.257, 5394.29 )
-collision_layer = 4
-
-[node name="coin 19" parent="coins" index="18" instance=ExtResource( 4 )]
-
-position = Vector2( 311.257, 5394.29 )
-collision_layer = 4
-
-[node name="coin 20" parent="coins" index="19" instance=ExtResource( 4 )]
-
-position = Vector2( 247.259, 5394.29 )
-collision_layer = 4
-
-[node name="coin 21" parent="coins" index="20" instance=ExtResource( 4 )]
-
-position = Vector2( 149.257, 4375.23 )
-collision_layer = 4
-
-[node name="coin 22" parent="coins" index="21" instance=ExtResource( 4 )]
-
-position = Vector2( 309.53, 7058.84 )
-collision_layer = 4
-
-[node name="coin 23" parent="coins" index="22" instance=ExtResource( 4 )]
-
-position = Vector2( 158.547, 4367.92 )
-collision_layer = 4
-
-[node name="coin 24" parent="coins" index="23" instance=ExtResource( 4 )]
-
-position = Vector2( 166.507, 4356.66 )
-collision_layer = 4
-
-[node name="coin 25" parent="coins" index="24" instance=ExtResource( 4 )]
-
-position = Vector2( 167.837, 4344.71 )
-collision_layer = 4
-
-[node name="coin 26" parent="coins" index="25" instance=ExtResource( 4 )]
-
-position = Vector2( 156.556, 4336.08 )
-collision_layer = 4
-
-[node name="coin 27" parent="coins" index="26" instance=ExtResource( 4 )]
-
-position = Vector2( 148.596, 4345.38 )
-collision_layer = 4
-
-[node name="coin 28" parent="coins" index="27" instance=ExtResource( 4 )]
-
-position = Vector2( 308.203, 7026.33 )
-collision_layer = 4
-
-[node name="coin 29" parent="coins" index="28" instance=ExtResource( 4 )]
-
-position = Vector2( 299.579, 7034.96 )
-collision_layer = 4
-
-[node name="coin 30" parent="coins" index="29" instance=ExtResource( 4 )]
-
-position = Vector2( 311.557, 7060.03 )
-scale = Vector2( 1.27066, 1.43095 )
-collision_layer = 4
-
-[node name="coin 31" parent="coins" index="30" instance=ExtResource( 4 )]
-
-position = Vector2( 235.488, 3373.91 )
-collision_layer = 4
-
-[node name="coin 31 2" parent="coins" index="31" instance=ExtResource( 4 )]
-
-position = Vector2( 510.613, 3350.45 )
-collision_layer = 4
-
-[node name="coin 31 3" parent="coins" index="32" instance=ExtResource( 4 )]
-
-position = Vector2( 644.988, 3561.57 )
-collision_layer = 4
-
-[node name="coin 31 4" parent="coins" index="33" instance=ExtResource( 4 )]
-
-position = Vector2( 316.571, 3157.43 )
-collision_layer = 4
-
-[node name="coin 31 5" parent="coins" index="34" instance=ExtResource( 4 )]
-
-position = Vector2( 627.905, 3145.7 )
-collision_layer = 4
-
-[node name="coin 31 6" parent="coins" index="35" instance=ExtResource( 4 )]
-
-position = Vector2( 279.472, 2930.67 )
-collision_layer = 4
-
-[node name="coin 32" parent="coins" index="36" instance=ExtResource( 4 )]
-
-position = Vector2( 501.523, 3889.22 )
-collision_layer = 4
-
-[node name="coin 31 7" parent="coins" index="37" instance=ExtResource( 4 )]
-
-position = Vector2( 342.669, 4229.37 )
-collision_layer = 4
-
-[node name="coin 31 7 2" parent="coins" index="38" instance=ExtResource( 4 )]
-
-position = Vector2( 207.274, 3971.33 )
-collision_layer = 4
-
-[node name="coin 31 7 3" parent="coins" index="39" instance=ExtResource( 4 )]
-
-position = Vector2( 570.877, 4106.72 )
-collision_layer = 4
-
-[node name="coin 31 7 4" parent="coins" index="40" instance=ExtResource( 4 )]
-
-position = Vector2( 600.711, 2300.43 )
-collision_layer = 4
-
-[node name="coin 31 7 5" parent="coins" index="41" instance=ExtResource( 4 )]
-
-position = Vector2( 384.232, 3661.01 )
-collision_layer = 4
-
 [node name="player" parent="." index="2" instance=ExtResource( 5 )]
 
 position = Vector2( 251.684, 1045.6 )
 collision_layer = 4
-collision_mask = 14
+collision_mask = 15
 collision/safe_margin = 0.075
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 
@@ -430,8 +219,6 @@ _sections_unfolded = [ "Collision" ]
 position = Vector2( -0.713431, -13.608 )
 scale = Vector2( 2.93365, 2.04677 )
 shape = SubResource( 1 )
-
-[connection signal="coin_picked" from="coins/coin" to="player" method="_on_coin_coin_picked"]
 
 [connection signal="win" from="player" to="HUD" method="_on_win"]
 
