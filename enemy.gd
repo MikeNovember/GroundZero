@@ -34,6 +34,9 @@ func _physics_process(delta):
 		anim = new_anim
 		$anim.play(anim)
 
+func _ready():
+	position = Vector2(rand_range(25.0, 785.0), rand_range(1200.0, 8750.0))
+	set_collision_layer_bit(1,true)
 
 func hit_by_bullet():
 	state = STATE_KILLED

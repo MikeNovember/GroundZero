@@ -1,12 +1,17 @@
 extends Node
 
+export (PackedScene) var Enemy
+export (int) var enemyCount
 
 func _ready():
+	randomize()
 	$player.connect("shoot",$HUD,"_on_shoot"); 
 	$WorldCompleted.connect("finish_area_reached",$HUD,"_on_finish_area_reached")
 	$player.connect("lose",$HUD,"_on_lose");
-	for enemy in $enemies.get_children():
+	for i in range(enemyCount):
+		var enemy = Enemy.instance()
 		enemy.connect("enemy_killed",$HUD,"_on_enemy_killed")
+		$enemies.add_child(enemy)
 	
 	for coin in $coins.get_children():
 		coin.connect("coin_picked", $player, "on_coin_picked")
