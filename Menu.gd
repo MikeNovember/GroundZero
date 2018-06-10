@@ -21,6 +21,7 @@ func _ready():
 	pointer = get_node("Sprite")
 	pointer_update()
 	
+	
 func pointer_update():
 	pointer.set_global_position(Vector2(pointer.get_global_position().x,labels[currentLabel].get_global_position().y + 10))
 	
@@ -35,7 +36,7 @@ func pointer_update():
 
 
 func _unhandled_input(event):
-	print(event)
+	#print(event)
 	if Input.is_key_pressed(KEY_P):
 		if open :
 			_on_resume()
