@@ -205,6 +205,7 @@ stretch_mode = 0
 [node name="Menu" type="NinePatchRect" parent="HUD" index="4"]
 
 pause_mode = 2
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0

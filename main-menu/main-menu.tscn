@@ -306,7 +306,6 @@ _sections_unfolded = [ "custom_colors" ]
 [node name="BestScores" type="NinePatchRect" parent="." index="4"]
 
 pause_mode = 2
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -330,6 +329,7 @@ _sections_unfolded = [ "Patch Margin", "Pause", "Visibility" ]
 
 [node name="Controls-Label" type="Node2D" parent="BestScores" index="0"]
 
+editor/display_folded = true
 position = Vector2( 38.1487, 227.854 )
 scale = Vector2( 3.37035, 3.17643 )
 
@@ -356,5 +356,24 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="ScoresLabels" type="VBoxContainer" parent="BestScores" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 98.0
+margin_top = 80.0
+margin_right = 160.0
+margin_bottom = 134.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Visibility" ]
 
 

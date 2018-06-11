@@ -34,13 +34,11 @@ func _unhandled_input(event):
 #	BestScoresUtils.save_score("Pszemo",2)
 #	print(BestScoresUtils.get_scores())
 	
-	
 	if controls and event is InputEventKey and event.is_pressed():
 		return _on_controls_disabled();
 	if best_scores and event is InputEventKey and event.is_pressed():
 		return _on_best_scores_disbled()
 				
-	
 	if Input.is_key_pressed(KEY_DOWN):
 		if currentLabel == labels.size() - 1:
 			currentLabel = 0
@@ -85,11 +83,20 @@ func _on_best_scores_disbled():
 	best_scores = false
 	get_node("BestScores").set("visible",false)
 	
-	
 func _on_best_scores():
 	best_scores = true
 	get_node("BestScores").set("visible",true)
-	
+	var bestScoresTab = get_node("BestScores/ScoresLabels")
+	var arr = parse_json(BestScoresUtils.get_scores())
+	print(arr)
+	var format = "{player} : {score}"
+	for score in arr:
+		var label_class = preload("res://ScoreLabel.gd")
+		var label = label_class.new()
+		print(score["player"])
+		label.set_text(format.format({"player": score["player"],"score":score["score"]}))
+		#"{0} : {1}".format([score["player"],score["score"]])
+		bestScoresTab.add_child(label)
 	
 	
 func _on_exit():
