@@ -25,10 +25,15 @@ func pointer_update():
 	
 
 func _unhandled_input(event):
-	print(event)
-	print("is pressed")
-	print(event.pressed)
-	print("is released")
+#	BestScoresUtils.save_score("Kbaran",1)
+#	print(BestScoresUtils.get_scores())
+#	BestScoresUtils.save_score("Gosia",2)
+#	print(BestScoresUtils.get_scores())
+#	BestScoresUtils.save_score("tomasz",0)
+#	print(BestScoresUtils.get_scores())
+#	BestScoresUtils.save_score("Pszemo",2)
+#	print(BestScoresUtils.get_scores())
+	
 	
 	if controls and event is InputEventKey and event.is_pressed():
 		return _on_controls_disabled();
@@ -65,18 +70,18 @@ func _on_start():
 	get_tree().change_scene("res://stage.tscn")
 	
 func _on_controls():
-	print("on controls")
+	#print("on controls")
 	controls = true
 	get_node("Controls").set("visible",true)
 	
 func _on_controls_disabled():
-	print("On controls disabled")
+	#print("On controls disabled")
 	controls = false
 	get_node("Controls").set("visible",false)
 	#get_tree().paused = false
 	
 func _on_best_scores_disbled():
-	print("AAA")	
+	#print("AAA")	
 	best_scores = false
 	get_node("BestScores").set("visible",false)
 	
@@ -84,9 +89,7 @@ func _on_best_scores_disbled():
 func _on_best_scores():
 	best_scores = true
 	get_node("BestScores").set("visible",true)
-	#BestScoresUtils.save_score("Kbaran",123)
-	#BestScoresUtils.save_score("Gosia",123)
-	#print(BestScoresUtils.get_scores())
+	
 	
 	
 func _on_exit():
