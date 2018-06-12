@@ -1,7 +1,7 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://enemy.gd" type="Script" id=1]
-[ext_resource path="res://enemy.png" type="Texture" id=2]
+[ext_resource path="res://jet.png" type="Texture" id=2]
 [ext_resource path="res://bullet.png" type="Texture" id=3]
 [ext_resource path="res://sound_hit.wav" type="AudioStream" id=4]
 [ext_resource path="res://sound_explode.wav" type="AudioStream" id=5]
@@ -13,102 +13,75 @@ length = 5.0
 loop = false
 step = 0.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("sprite:frame")
+tracks/0/path = NodePath("explosion:emitting")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("sprite:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/keys = {
-"times": PoolRealArray( 0, 3.2 ),
-"transitions": PoolRealArray( 0.5, 1 ),
-"update": 0,
-"values": [ 0.0, 180.0 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("sprite:self_modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0.0299999, 0.36 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("explosion:emitting")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
 "times": PoolRealArray( 0, 0.11 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
-tracks/4/type = "value"
-tracks/4/path = NodePath("explosion:process_material:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
+tracks/1/type = "value"
+tracks/1/path = NodePath("explosion:process_material:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
 "times": PoolRealArray( 0.12, 0.37 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 1.0, 4.0 ]
 }
-tracks/5/type = "value"
-tracks/5/path = NodePath("sound_hit:playing")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
+tracks/2/type = "value"
+tracks/2/path = NodePath("sound_hit:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
 "times": PoolRealArray( 0.00999999 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
 }
-tracks/6/type = "value"
-tracks/6/path = NodePath("sound_explode:playing")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
+tracks/3/type = "value"
+tracks/3/path = NodePath("sound_explode:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
 "times": PoolRealArray( 0.0800002 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
 }
-tracks/7/type = "method"
-tracks/7/path = NodePath(".")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 4.2 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "queue_free"
-} ]
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("sprite:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.14, 0.17 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -116,18 +89,6 @@ tracks/7/keys = {
 length = 6.75
 loop = true
 step = 0.25
-tracks/0/type = "value"
-tracks/0/path = NodePath("sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.75, 1.5, 2.25, 3, 3.75, 4.5, 5.25, 6, 6.75 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 5, 6, 5, 6, 5, 6, 7, 6, 7, 5 ]
-}
 
 [sub_resource type="Animation" id=3]
 
@@ -135,38 +96,20 @@ resource_name = "walk"
 length = 1.25
 loop = true
 step = 0.25
-tracks/0/type = "value"
-tracks/0/path = NodePath("sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1, 1.25 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 0 ]
-}
 
-[sub_resource type="CanvasItemMaterial" id=4]
-
-render_priority = 0
-blend_mode = 0
-light_mode = 0
-
-[sub_resource type="CapsuleShape2D" id=5]
+[sub_resource type="CapsuleShape2D" id=4]
 
 custom_solver_bias = 0.0
-radius = 13.4556
-height = 14.2002
+radius = 13.8862
+height = 12.4848
 
-[sub_resource type="CanvasItemMaterial" id=6]
+[sub_resource type="CanvasItemMaterial" id=5]
 
 render_priority = 0
 blend_mode = 1
 light_mode = 0
 
-[sub_resource type="ParticlesMaterial" id=7]
+[sub_resource type="ParticlesMaterial" id=6]
 
 render_priority = 0
 trail_divisor = 1
@@ -193,7 +136,7 @@ damping = 0.0
 damping_random = 0.0
 angle = 0.0
 angle_random = 0.0
-scale = 1.0
+scale = 1.96
 scale_random = 0.0
 color = Color( 0.929688, 0.488931, 0.0617371, 1 )
 hue_variation = 0.0
@@ -216,7 +159,7 @@ _sections_unfolded = [ "Collision", "Pickable", "Transform", "Z", "collision" ]
 
 [node name="enabler" type="VisibilityEnabler2D" parent="." index="0"]
 
-position = Vector2( 16.2569, 11.0034 )
+position = Vector2( 10.2518, 11.0034 )
 scale = Vector2( 23.5056, 10.8629 )
 rect = Rect2( -10, -10, 20, 20 )
 pause_animations = true
@@ -237,26 +180,26 @@ anims/explode = SubResource( 1 )
 anims/idle = SubResource( 2 )
 anims/walk = SubResource( 3 )
 blend_times = [  ]
-_sections_unfolded = [ "Playback Options", "playback" ]
+_sections_unfolded = [ "Pause", "Playback Options", "playback" ]
 
 [node name="sprite" type="Sprite" parent="." index="2"]
 
-material = SubResource( 4 )
+position = Vector2( 0, -0.0187361 )
+scale = Vector2( 0.0756035, 0.0756035 )
 texture = ExtResource( 2 )
-flip_h = true
-hframes = 8
-_sections_unfolded = [ "Animation", "Material", "Region", "Transform", "Visibility" ]
+_sections_unfolded = [ "Animation", "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 
-position = Vector2( -0.00525069, -0.727495 )
+position = Vector2( -1.67001, 3.11092 )
 rotation = -1.5708
-shape = SubResource( 5 )
+scale = Vector2( 1.12423, 1.75465 )
+shape = SubResource( 4 )
 
 [node name="explosion" type="Particles2D" parent="." index="4"]
 
 self_modulate = Color( 1, 1, 1, 0.12 )
-material = SubResource( 6 )
+material = SubResource( 5 )
 emitting = false
 amount = 32
 lifetime = 0.5
@@ -270,7 +213,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 215832976
-process_material = SubResource( 7 )
+process_material = SubResource( 6 )
 texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
@@ -289,6 +232,7 @@ area_mask = 1
 
 [node name="sound_explode" type="AudioStreamPlayer2D" parent="." index="6"]
 
+position = Vector2( -0.387421, 0.19371 )
 stream = ExtResource( 5 )
 volume_db = 0.0
 autoplay = false

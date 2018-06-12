@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://stage.gd" type="Script" id=1]
 [ext_resource path="res://enemy.tscn" type="PackedScene" id=2]
@@ -15,18 +15,19 @@
 [ext_resource path="res://menu/choice-arrow.png" type="Texture" id=13]
 [ext_resource path="res://fonts/menu_font.tres" type="DynamicFont" id=14]
 [ext_resource path="res://WorldCompleted.gd" type="Script" id=15]
+[ext_resource path="res://nyskyline.png" type="Texture" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 9.68749, 10 )
 
-[node name="stage" type="Node"]
+[node name="stage" type="Node" index="0"]
 
 script = ExtResource( 1 )
 Enemy = ExtResource( 2 )
 Coin = ExtResource( 3 )
-enemyCount = 100
+enemyCount = 10
 coinCount = 100
 
 [node name="tile_map" type="TileMap" parent="." index="0"]
@@ -78,6 +79,7 @@ bus = "Master"
 
 [node name="HUD" type="CanvasLayer" parent="." index="6"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -313,7 +315,6 @@ _sections_unfolded = [ "custom_colors" ]
 
 [node name="WorldCompleted" type="Area2D" parent="." index="7"]
 
-editor/display_folded = true
 position = Vector2( 928.232, 7794.8 )
 scale = Vector2( 32.0442, -6.32247 )
 input_pickable = true
@@ -325,9 +326,17 @@ collision_layer = 8
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 15 )
-_sections_unfolded = [ "Collision" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCompleted" index="0"]
+[node name="nyskyline" type="Sprite" parent="WorldCompleted" index="0"]
+
+position = Vector2( -0.957109, 38.7268 )
+rotation = 3.14159
+scale = Vector2( 0.0590554, 0.238308 )
+texture = ExtResource( 16 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCompleted" index="1"]
 
 position = Vector2( -0.713431, -13.608 )
 scale = Vector2( 2.93365, 2.04677 )

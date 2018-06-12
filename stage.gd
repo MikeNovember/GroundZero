@@ -9,6 +9,7 @@ func _ready():
 	randomize()
 	$player.connect("shoot",$HUD,"_on_shoot"); 
 	$WorldCompleted.connect("finish_area_reached",$HUD,"_on_finish_area_reached")
+	$WorldCompleted.connect("finish_area_reached",$player,"_on_finish_area_reached")
 	$player.connect("lose",$HUD,"_on_lose");
 	for i in range(coinCount):
 		var coin = Coin.instance()

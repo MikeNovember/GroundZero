@@ -8,6 +8,7 @@ signal enemy_killed
 
 var linear_velocity = Vector2()
 var direction = 1
+var xScale = 1
 var anim=""
 
 var state = STATE_WALKING
@@ -24,11 +25,10 @@ func _physics_process(delta):
 		linear_velocity.x = direction * WALK_SPEED
 		linear_velocity = move_and_slide(linear_velocity)
 
-		sprite.scale = Vector2(direction, 1.0)
+		sprite.scale = Vector2(xScale*direction, sprite.scale.y)
 		new_anim = "walk"
 	else:
 		new_anim = "explode"
-
 
 	if anim != new_anim:
 		anim = new_anim
@@ -39,10 +39,12 @@ func _ready():
 	set_collision_layer_bit(1,true)
 	set_collision_mask_bit(0, false)
 	set_collision_mask_bit(1, false)
+	xScale = sprite.scale.x
 
 func hit_by_bullet():
 	state = STATE_KILLED
 	set_collision_layer_bit(1,false)
 	set_collision_layer_bit(0,false)
 	emit_signal("enemy_killed")
+	#$sprite.visible = false
 	

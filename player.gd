@@ -59,5 +59,8 @@ func _physics_process(delta):
 		coins -= 1
 		emit_signal('shoot')
 
+func _on_finish_area_reached():
+	linear_vel.y = 0
+
 func on_coin_picked():
 	coins += 1
