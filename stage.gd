@@ -6,7 +6,6 @@ export (int) var enemyCount
 export (int) var coinCount
 
 func _ready():
-	print("STAGE AGAIN")
 	get_tree().paused = false
 	randomize()
 	$player.connect("shoot",$HUD,"_on_shoot"); 

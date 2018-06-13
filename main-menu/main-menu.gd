@@ -59,11 +59,11 @@ func _unhandled_input(event):
 			_on_start()
 		elif label == "Controls":
 			_on_controls()
-		elif label == "BestScores":
-			#_on_best_scores()
-			var someshit = "\n   dsada a  \n".replace("\n","").replace(" ","")
-			print(someshit)
-			pass
+#		elif label == "BestScores":
+#			#_on_best_scores()
+#			var someshit = "\n   dsada a  \n".replace("\n","").replace(" ","")
+#			print(someshit)
+#			pass
 		else:
 			_on_exit()	
 

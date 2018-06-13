@@ -26,9 +26,8 @@ static func save_score(player_name, score):
 	var file = File.new()
 	if file.open(_scores_path, File.WRITE) != 0:
     	print("Error opening file")
-    #	return
 
-# Save the dictionary as JSON (or whatever you want, JSON is convenient here because it's built-in)
+
 	my_data.sort_custom(ScoresSorter,"sort")
 	file.store_var(to_json(my_data))
 	file.close()
@@ -40,15 +39,10 @@ static func get_scores():
 	if not save_game.file_exists(_scores_path):
 		return "[]" # Error! We don't have a save to load.
 	save_game.open(_scores_path, File.READ)
-	#var scores = parse_json(save_game.get_line())
+	
 	var scores = save_game.get_var()
-		# First we need to create the object and add it to the tree and set its position.
 	save_game.close()
 	return scores
-	
-	
-# Note: This can be called from anywhere inside the tree. This function is path independent.
 
-    # Load the file line by line and process that dictionary to restore the object it represents
 	
 const _scores_path = "user://best-scores.save"

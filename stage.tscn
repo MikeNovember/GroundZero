@@ -27,6 +27,7 @@ extents = Vector2( 9.68749, 10 )
 
 [node name="stage" type="Node" index="0"]
 
+editor/display_folded = true
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
 Enemy = ExtResource( 2 )

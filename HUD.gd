@@ -42,8 +42,8 @@ func _on_finish_area_reached():
 	var bestScores = parse_json(BestScoresUtils.get_scores())
 	var best = bestScores.pop_back()
 	bestScores.push_back(best)
-	print(best["score"])
-	print(bestScores.size())
+	#print(best["score"])
+	#print(bestScores.size())
 	if best == null or bestScores.size() < 5 or best["score"] < last_score:
 		#get_node("ConfirmationDialog").popup()
 		#get_node("ConfirmationDialog/PlayerName").grab_focus()
@@ -92,8 +92,10 @@ func _on_TextEdit_text_changed():
 	var text = get_node("PopupDialog/PlayerNameBackground/PlayerName").get_text()
 	if text.find('\n') > -1:
 		text = text.replace("\n","").replace(" ","")
-		BestScoresUtils.save_score(text,last_score)
 		last_player_score = {"player":text,"score":last_score}
+	#	print("BOOM")
+	#	print(last_player_score)
+		BestScoresUtils.save_score(text,last_score)
 		get_node("PopupDialog").hide()
 		get_node("BestScoresPopup").popup()
 		#var EndMenu = get_node("EndMenu")

@@ -67,7 +67,6 @@ _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="Labels" type="Node2D" parent="." index="2"]
 
-editor/display_folded = true
 position = Vector2( 280.336, 273.959 )
 scale = Vector2( 4.0123, 3.61554 )
 
