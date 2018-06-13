@@ -41,6 +41,9 @@ func _on_finish_area_reached():
 	#BestScoresUtils.save_score("KB",score)
 	var bestScores = parse_json(BestScoresUtils.get_scores())
 	var best = bestScores.pop_back()
+	bestScores.push_back(best)
+	print(best["score"])
+	print(bestScores.size())
 	if best == null or bestScores.size() < 5 or best["score"] < last_score:
 		#get_node("ConfirmationDialog").popup()
 		#get_node("ConfirmationDialog/PlayerName").grab_focus()

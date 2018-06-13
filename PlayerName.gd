@@ -8,6 +8,7 @@ func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	cursor_set_column("playername".length())
+	#self.background_color = Color(0,0,0)
 	#add_color_override("background_color",Color(0,0,0))
 	
 	pass

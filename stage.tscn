@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://stage.gd" type="Script" id=1]
 [ext_resource path="res://enemy.tscn" type="PackedScene" id=2]
@@ -15,9 +15,10 @@
 [ext_resource path="res://menu/choice-arrow.png" type="Texture" id=13]
 [ext_resource path="res://fonts/menu_font.tres" type="DynamicFont" id=14]
 [ext_resource path="res://EndMenu.gd" type="Script" id=15]
-[ext_resource path="res://PlayerName.gd" type="Script" id=16]
-[ext_resource path="res://BestScoresPopup.gd" type="Script" id=17]
-[ext_resource path="res://WorldCompleted.gd" type="Script" id=18]
+[ext_resource path="res://PlayerNameStyleBox.tres" type="StyleBox" id=16]
+[ext_resource path="res://PlayerName.gd" type="Script" id=17]
+[ext_resource path="res://BestScoresPopup.gd" type="Script" id=18]
+[ext_resource path="res://WorldCompleted.gd" type="Script" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -460,6 +461,15 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_styles/read_only = ExtResource( 16 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 16 )
+custom_styles/completion = ExtResource( 16 )
+custom_fonts/font = ExtResource( 14 )
+custom_colors/caret_background_color = Color( 0, 0, 0, 1 )
+custom_colors/caret_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/background_color = Color( 0.671875, 0.0577393, 0.0577393, 1 )
 text = "PlayerName"
 readonly = false
 highlight_current_line = false
@@ -476,8 +486,8 @@ caret_block_mode = false
 caret_blink = false
 caret_blink_speed = 0.65
 caret_moving_by_right_click = true
-script = ExtResource( 16 )
-_sections_unfolded = [ "Focus", "Hint", "Material", "Mouse", "Rect", "Size Flags", "Theme", "custom_colors", "custom_fonts", "custom_icons", "custom_styles" ]
+script = ExtResource( 17 )
+_sections_unfolded = [ "Caret", "Focus", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_fonts", "custom_icons", "custom_styles" ]
 
 [node name="Label" type="Label" parent="HUD/PopupDialog/PlayerNameBackground" index="1"]
 
@@ -523,7 +533,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 popup_exclusive = false
-script = ExtResource( 17 )
+script = ExtResource( 18 )
 
 [node name="NinePatchRect" type="NinePatchRect" parent="HUD/BestScoresPopup" index="0"]
 
@@ -590,7 +600,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
-_sections_unfolded = [ "Rect", "custom_constants" ]
+_sections_unfolded = [ "Margin", "custom_constants" ]
 
 [node name="WorldCompleted" type="Area2D" parent="." index="7"]
 
@@ -604,7 +614,7 @@ angular_damp = 1.0
 collision_layer = 8
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 18 )
+script = ExtResource( 19 )
 _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCompleted" index="0"]
