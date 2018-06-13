@@ -25,17 +25,20 @@ func pointer_update():
 	
 
 func _unhandled_input(event):
-	print(event)
-	print("is pressed")
-	print(event.pressed)
-	print("is released")
+#	BestScoresUtils.save_score("Kbaran",1)
+#	print(BestScoresUtils.get_scores())
+#	BestScoresUtils.save_score("Gosia",2)
+#	print(BestScoresUtils.get_scores())
+#	BestScoresUtils.save_score("tomasz",0)
+#	print(BestScoresUtils.get_scores())
+#	BestScoresUtils.save_score("Pszemo",2)
+#	print(BestScoresUtils.get_scores())
 	
 	if controls and event is InputEventKey and event.is_pressed():
 		return _on_controls_disabled();
 	if best_scores and event is InputEventKey and event.is_pressed():
 		return _on_best_scores_disbled()
 				
-	
 	if Input.is_key_pressed(KEY_DOWN):
 		if currentLabel == labels.size() - 1:
 			currentLabel = 0
@@ -56,8 +59,11 @@ func _unhandled_input(event):
 			_on_start()
 		elif label == "Controls":
 			_on_controls()
-		elif label == "BestScores":
-			_on_best_scores()
+#		elif label == "BestScores":
+#			#_on_best_scores()
+#			var someshit = "\n   dsada a  \n".replace("\n","").replace(" ","")
+#			print(someshit)
+#			pass
 		else:
 			_on_exit()	
 
@@ -65,28 +71,35 @@ func _on_start():
 	get_tree().change_scene("res://stage.tscn")
 	
 func _on_controls():
-	print("on controls")
+	#print("on controls")
 	controls = true
 	get_node("Controls").set("visible",true)
 	
 func _on_controls_disabled():
-	print("On controls disabled")
+	#print("On controls disabled")
 	controls = false
 	get_node("Controls").set("visible",false)
 	#get_tree().paused = false
 	
 func _on_best_scores_disbled():
-	print("AAA")	
+	#print("AAA")	
 	best_scores = false
 	get_node("BestScores").set("visible",false)
-	
 	
 func _on_best_scores():
 	best_scores = true
 	get_node("BestScores").set("visible",true)
-	#BestScoresUtils.save_score("Kbaran",123)
-	#BestScoresUtils.save_score("Gosia",123)
-	#print(BestScoresUtils.get_scores())
+	var bestScoresTab = get_node("BestScores/ScoresLabels")
+	var arr = parse_json(BestScoresUtils.get_scores())
+	print(arr)
+	var format = "{player} : {score}"
+	for score in arr:
+		var label_class = preload("res://ScoreLabel.gd")
+		var label = label_class.new()
+		print(score["player"])
+		label.set_text(format.format({"player": score["player"],"score":score["score"]}))
+		#"{0} : {1}".format([score["player"],score["score"]])
+		bestScoresTab.add_child(label)
 	
 	
 func _on_exit():

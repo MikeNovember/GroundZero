@@ -1,4 +1,5 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=22 format=2]
+
 
 [ext_resource path="res://stage.gd" type="Script" id=1]
 [ext_resource path="res://enemy.tscn" type="PackedScene" id=2]
@@ -14,8 +15,15 @@
 [ext_resource path="res://Menu.gd" type="Script" id=12]
 [ext_resource path="res://menu/choice-arrow.png" type="Texture" id=13]
 [ext_resource path="res://fonts/menu_font.tres" type="DynamicFont" id=14]
-[ext_resource path="res://WorldCompleted.gd" type="Script" id=15]
-[ext_resource path="res://nyskyline.png" type="Texture" id=16]
+
+[ext_resource path="res://EndMenu.gd" type="Script" id=15]
+[ext_resource path="res://PlayerNameStyleBox.tres" type="StyleBox" id=16]
+[ext_resource path="res://PlayerName.gd" type="Script" id=17]
+[ext_resource path="res://BestScoresPopup.gd" type="Script" id=18]
+[ext_resource path="res://WorldCompleted.gd" type="Script" id=19]
+[ext_resource path="res://nyskyline.png" type="Texture" id=20]
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -24,7 +32,9 @@ extents = Vector2( 9.68749, 10 )
 
 [node name="stage" type="Node" index="0"]
 
+editor/display_folded = true
 script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
 Enemy = ExtResource( 2 )
 Coin = ExtResource( 3 )
 enemyCount = 10
@@ -80,12 +90,15 @@ bus = "Master"
 [node name="HUD" type="CanvasLayer" parent="." index="6"]
 
 editor/display_folded = true
+pause_mode = 2
+
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 script = ExtResource( 8 )
+_sections_unfolded = [ "Pause" ]
 
 [node name="GameOver" type="Label" parent="HUD" index="0"]
 
@@ -207,6 +220,7 @@ stretch_mode = 0
 [node name="Menu" type="NinePatchRect" parent="HUD" index="4"]
 
 pause_mode = 2
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -313,6 +327,290 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors" ]
 
+[node name="EndMenu" type="NinePatchRect" parent="HUD" index="5"]
+
+
+pause_mode = 2
+editor/display_folded = true
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 325.0
+margin_top = 130.0
+margin_right = 473.0
+margin_bottom = 200.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 11 )
+patch_margin_left = 7
+patch_margin_top = 7
+patch_margin_right = 7
+patch_margin_bottom = 7
+script = ExtResource( 15 )
+_sections_unfolded = [ "Pause", "Visibility" ]
+
+[node name="Sprite" type="Sprite" parent="HUD/EndMenu" index="0"]
+
+position = Vector2( 16.5015, 18.3182 )
+scale = Vector2( 0.862078, 1.16446 )
+texture = ExtResource( 13 )
+
+[node name="Labels" type="Node2D" parent="HUD/EndMenu" index="1"]
+
+position = Vector2( 78.1546, 63.1447 )
+scale = Vector2( 1.90453, 1.80334 )
+
+[node name="Restart" type="Label" parent="HUD/EndMenu/Labels" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -24.0
+margin_top = -32.0
+margin_right = 32.0
+margin_bottom = -18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 14 )
+custom_colors/font_color = Color( 0.308594, 0.276047, 0.276047, 1 )
+text = "Restart"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors" ]
+
+[node name="Exit" type="Label" parent="HUD/EndMenu/Labels" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -24.0
+margin_top = -16.0
+margin_right = 27.0
+margin_bottom = -2.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 14 )
+custom_colors/font_color = Color( 0.308594, 0.276047, 0.276047, 1 )
+text = "Exit"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors" ]
+
+[node name="PopupDialog" type="PopupDialog" parent="HUD" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 241.0
+margin_top = 155.0
+margin_right = 540.0
+margin_bottom = 328.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+popup_exclusive = false
+
+[node name="PlayerNameBackground" type="NinePatchRect" parent="HUD/PopupDialog" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 299.0
+margin_bottom = 172.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 11 )
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+_sections_unfolded = [ "Grow Direction", "Patch Margin" ]
+
+[node name="PlayerName" type="TextEdit" parent="HUD/PopupDialog/PlayerNameBackground" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 94.0
+margin_top = 68.0
+margin_right = 204.0
+margin_bottom = 111.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/read_only = ExtResource( 16 )
+custom_styles/focus = ExtResource( 16 )
+custom_styles/normal = ExtResource( 16 )
+custom_styles/completion = ExtResource( 16 )
+custom_fonts/font = ExtResource( 14 )
+custom_colors/caret_background_color = Color( 0, 0, 0, 1 )
+custom_colors/caret_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/background_color = Color( 0.671875, 0.0577393, 0.0577393, 1 )
+text = "PlayerName"
+readonly = false
+highlight_current_line = false
+syntax_highlighting = false
+show_line_numbers = false
+highlight_all_occurrences = false
+override_selected_font_color = false
+context_menu_enabled = true
+smooth_scrolling = false
+v_scroll_speed = 80.0
+hiding_enabled = 0
+wrap_lines = false
+caret_block_mode = false
+caret_blink = false
+caret_blink_speed = 0.65
+caret_moving_by_right_click = true
+script = ExtResource( 17 )
+_sections_unfolded = [ "Caret", "Focus", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_fonts", "custom_icons", "custom_styles" ]
+
+[node name="Label" type="Label" parent="HUD/PopupDialog/PlayerNameBackground" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 65.0
+margin_top = 16.0
+margin_right = 224.0
+margin_bottom = 38.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 14 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "ONE OF THE BEST SCORES!
+WHAT IS YOUR NAME?"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="BestScoresPopup" type="PopupDialog" parent="HUD" index="7"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 243.0
+margin_top = 90.0
+margin_right = 534.0
+margin_bottom = 381.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+popup_exclusive = false
+script = ExtResource( 18 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HUD/BestScoresPopup" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -27.0
+margin_top = 1.0
+margin_right = 361.0
+margin_bottom = 290.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 11 )
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+_sections_unfolded = [ "Anchor", "Margin", "Patch Margin" ]
+
+[node name="Label" type="Label" parent="HUD/BestScoresPopup/NinePatchRect" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 150.0
+margin_top = 24.0
+margin_right = 238.0
+margin_bottom = 38.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 14 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "BEST SCORES"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="BestScoresTab" type="VBoxContainer" parent="HUD/BestScoresPopup" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 23.0
+margin_top = 58.0
+margin_right = 373.0
+margin_bottom = 276.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Margin", "custom_constants" ]
+
 [node name="WorldCompleted" type="Area2D" parent="." index="7"]
 
 position = Vector2( 928.232, 7794.8 )
@@ -325,7 +623,8 @@ angular_damp = 1.0
 collision_layer = 8
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 15 )
+
+script = ExtResource( 19 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="nyskyline" type="Sprite" parent="WorldCompleted" index="0"]
@@ -333,8 +632,9 @@ _sections_unfolded = [ "Collision", "Transform" ]
 position = Vector2( -0.957109, 38.7268 )
 rotation = 3.14159
 scale = Vector2( 0.0590554, 0.238308 )
-texture = ExtResource( 16 )
+texture = ExtResource( 20 )
 _sections_unfolded = [ "Transform" ]
+
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCompleted" index="1"]
 
@@ -343,5 +643,9 @@ scale = Vector2( 2.93365, 2.04677 )
 shape = SubResource( 1 )
 
 [connection signal="win" from="player" to="HUD" method="_on_win"]
+
+[connection signal="text_changed" from="HUD/PopupDialog/PlayerNameBackground/PlayerName" to="HUD" method="_on_TextEdit_text_changed"]
+
+[connection signal="about_to_show" from="HUD/BestScoresPopup" to="HUD/BestScoresPopup" method="_on_BestScoresPopup_about_to_show"]
 
 

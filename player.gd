@@ -20,6 +20,12 @@ var coins = 5;
 #cache the sprite here for fast access (we will set scale to flip it often)
 onready var sprite = $sprite
 
+var extra_speed = 0
+var speed_constant = 5
+
+func _ready():
+	linear_vel.y = FALLING_SPEED
+
 func _is_on_left_edge(position_x,velocity):
 	return (position_x <= 25 and linear_vel.x < 0)
 func _is_on_right_edge(position_x,velocity):
@@ -33,10 +39,10 @@ func _physics_process(delta):
 		linear_vel.x = 0
 	
 	linear_vel = move_and_slide(linear_vel, FLOOR_NORMAL)
-	linear_vel.y = FALLING_SPEED
+	linear_vel.y = FALLING_SPEED + extra_speed
 
-	if is_on_floor() || is_on_ceiling() || is_on_wall():
-		emit_signal("lose")
+	#if is_on_floor() || is_on_ceiling() || is_on_wall():
+		#emit_signal("lose")
 
 	# Horizontal Movement
 	var target_speed = 0
@@ -44,6 +50,12 @@ func _physics_process(delta):
 		target_speed += -1
 	if Input.is_action_pressed("move_right"):
 		target_speed +=  1
+	if Input.is_action_pressed("move_down"):
+		extra_speed = extra_speed + speed_constant
+	if Input.is_action_pressed("move_up"):
+		if extra_speed > 0:
+			extra_speed = extra_speed - speed_constant
+		
 
 	target_speed *= WALK_SPEED
 	linear_vel.x = lerp(linear_vel.x, target_speed, 0.1)
