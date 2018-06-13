@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://stage.gd" type="Script" id=1]
 [ext_resource path="res://enemy.tscn" type="PackedScene" id=2]
@@ -15,8 +15,9 @@
 [ext_resource path="res://menu/choice-arrow.png" type="Texture" id=13]
 [ext_resource path="res://fonts/menu_font.tres" type="DynamicFont" id=14]
 [ext_resource path="res://EndMenu.gd" type="Script" id=15]
-[ext_resource path="res://BestScoresPopup.gd" type="Script" id=16]
-[ext_resource path="res://WorldCompleted.gd" type="Script" id=17]
+[ext_resource path="res://PlayerName.gd" type="Script" id=16]
+[ext_resource path="res://BestScoresPopup.gd" type="Script" id=17]
+[ext_resource path="res://WorldCompleted.gd" type="Script" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -405,15 +406,14 @@ _sections_unfolded = [ "custom_colors" ]
 
 [node name="PopupDialog" type="PopupDialog" parent="HUD" index="6"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 208.0
-margin_top = 186.0
-margin_right = 507.0
-margin_bottom = 359.0
+margin_left = 241.0
+margin_top = 155.0
+margin_right = 540.0
+margin_bottom = 328.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -422,16 +422,37 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 popup_exclusive = false
 
-[node name="PlayerName" type="TextEdit" parent="HUD/PopupDialog" index="0"]
+[node name="PlayerNameBackground" type="NinePatchRect" parent="HUD/PopupDialog" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 102.0
-margin_top = 69.0
-margin_right = 212.0
-margin_bottom = 112.0
+margin_right = 299.0
+margin_bottom = 172.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 11 )
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+_sections_unfolded = [ "Grow Direction", "Patch Margin" ]
+
+[node name="PlayerName" type="TextEdit" parent="HUD/PopupDialog/PlayerNameBackground" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 94.0
+margin_top = 68.0
+margin_right = 204.0
+margin_bottom = 111.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -455,17 +476,46 @@ caret_block_mode = false
 caret_blink = false
 caret_blink_speed = 0.65
 caret_moving_by_right_click = true
+script = ExtResource( 16 )
+_sections_unfolded = [ "Focus", "Hint", "Material", "Mouse", "Rect", "Size Flags", "Theme", "custom_colors", "custom_fonts", "custom_icons", "custom_styles" ]
 
-[node name="BestScoresPopup" type="PopupDialog" parent="HUD" index="7"]
+[node name="Label" type="Label" parent="HUD/PopupDialog/PlayerNameBackground" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 255.0
-margin_top = 89.0
-margin_right = 546.0
-margin_bottom = 380.0
+margin_left = 65.0
+margin_top = 16.0
+margin_right = 224.0
+margin_bottom = 38.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 14 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "ONE OF THE BEST SCORES!
+WHAT IS YOUR NAME?"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="BestScoresPopup" type="PopupDialog" parent="HUD" index="7"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 243.0
+margin_top = 90.0
+margin_right = 534.0
+margin_bottom = 381.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -473,7 +523,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 popup_exclusive = false
-script = ExtResource( 16 )
+script = ExtResource( 17 )
 
 [node name="NinePatchRect" type="NinePatchRect" parent="HUD/BestScoresPopup" index="0"]
 
@@ -481,9 +531,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 2.0
-margin_right = 390.0
-margin_bottom = 307.0
+margin_left = -27.0
+margin_top = 1.0
+margin_right = 361.0
+margin_bottom = 290.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -553,7 +604,7 @@ angular_damp = 1.0
 collision_layer = 8
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 17 )
+script = ExtResource( 18 )
 _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCompleted" index="0"]
@@ -564,7 +615,7 @@ shape = SubResource( 1 )
 
 [connection signal="win" from="player" to="HUD" method="_on_win"]
 
-[connection signal="text_changed" from="HUD/PopupDialog/PlayerName" to="HUD" method="_on_TextEdit_text_changed"]
+[connection signal="text_changed" from="HUD/PopupDialog/PlayerNameBackground/PlayerName" to="HUD" method="_on_TextEdit_text_changed"]
 
 [connection signal="about_to_show" from="HUD/BestScoresPopup" to="HUD/BestScoresPopup" method="_on_BestScoresPopup_about_to_show"]
 

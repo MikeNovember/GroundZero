@@ -39,15 +39,18 @@ func _on_finish_area_reached():
 	finalScoreLabel.visible = true
 	last_score = _calc_score(enemies_killed,coins,duration)
 	#BestScoresUtils.save_score("KB",score)
-	var best = parse_json(BestScoresUtils.get_scores()).pop_back()
-	#if best["score"] < last_score:
+	var bestScores = parse_json(BestScoresUtils.get_scores())
+	var best = bestScores.pop_back()
+	if best == null or bestScores.size() < 5 or best["score"] < last_score:
 		#get_node("ConfirmationDialog").popup()
 		#get_node("ConfirmationDialog/PlayerName").grab_focus()
-	get_node("PopupDialog").popup()
-	print("best")
+		get_node("PopupDialog").popup()
+	else:
+		get_node("BestScoresPopup").popup()
+	#print("best")
 		
 	finalScoreLabel.text = str(last_score)
-	print("HERE?")
+	#print("HERE?")
 	get_tree().paused = true	
 
 func _on_enemy_killed():
@@ -83,11 +86,9 @@ func _calc_score(enemies_killed, ammo_left,duration):
 
 
 func _on_TextEdit_text_changed():
-	var text = get_node("PopupDialog/PlayerName").get_text()
-	print(text)
-	print(text.length())
-	if text.ends_with('\n'):
-		print("ENTEEER")
+	var text = get_node("PopupDialog/PlayerNameBackground/PlayerName").get_text()
+	if text.find('\n') > -1:
+		text = text.replace("\n","").replace(" ","")
 		BestScoresUtils.save_score(text,last_score)
 		last_player_score = {"player":text,"score":last_score}
 		get_node("PopupDialog").hide()
@@ -96,7 +97,6 @@ func _on_TextEdit_text_changed():
 		#EndMenu.show()
 		
 	
-	pass # replace with function body
 	
 func get_last_score():
 	return last_player_score

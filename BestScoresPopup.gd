@@ -76,7 +76,7 @@ func _create_entry(player,score):
 	hbox.add_constant_override("separation",75)
 	var player_name_label = ScoreLabel.new()
 	player_name_label.set_custom_minimum_size(Vector2(150,0)) 
-	player_name_label.set_text(player)
+	player_name_label.set_text(player.to_upper())
 	
 	var score_label = ScoreLabel.new()
 	score_label.set_custom_minimum_size(Vector2(150,0))

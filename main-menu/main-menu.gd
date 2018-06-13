@@ -60,7 +60,10 @@ func _unhandled_input(event):
 		elif label == "Controls":
 			_on_controls()
 		elif label == "BestScores":
-			_on_best_scores()
+			#_on_best_scores()
+			var someshit = "\n   dsada a  \n".replace("\n","").replace(" ","")
+			print(someshit)
+			pass
 		else:
 			_on_exit()	
 
