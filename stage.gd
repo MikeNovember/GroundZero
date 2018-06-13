@@ -6,6 +6,8 @@ export (int) var enemyCount
 export (int) var coinCount
 
 func _ready():
+	print("STAGE AGAIN")
+	get_tree().paused = false
 	randomize()
 	$player.connect("shoot",$HUD,"_on_shoot"); 
 	$WorldCompleted.connect("finish_area_reached",$HUD,"_on_finish_area_reached")
@@ -22,3 +24,5 @@ func _ready():
 	for coin in $coins.get_children():
 		coin.connect("coin_picked", $player, "on_coin_picked")
 		coin.connect("coin_picked",$HUD,"_on_coin_picked")
+
+
