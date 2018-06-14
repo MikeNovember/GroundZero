@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://main-menu/main-menu.gd" type="Script" id=1]
 [ext_resource path="res://menu/choice-arrow.png" type="Texture" id=2]
 [ext_resource path="res://fonts/main_menu.tres" type="DynamicFont" id=3]
 [ext_resource path="res://fonts/menu_font.tres" type="DynamicFont" id=4]
 [ext_resource path="res://menu/menu-background.png" type="Texture" id=5]
+[ext_resource path="res://Toggle.wav" type="AudioStream" id=6]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -502,5 +503,13 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants" ]
+
+[node name="toggle-sound" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 6 )
+volume_db = 24.0
+autoplay = false
+mix_target = 2
+bus = "Master"
 
 

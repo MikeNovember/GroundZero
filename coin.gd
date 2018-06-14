@@ -12,3 +12,4 @@ func _on_coin_body_enter( body ):
 		$anim.play("taken")
 		taken = true
 		emit_signal("coin_picked")
+		

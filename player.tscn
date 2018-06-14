@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://player.gd" type="Script" id=1]
 [ext_resource path="res://player/nuke.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://osb_left.png" type="Texture" id=5]
 [ext_resource path="res://osb_right.png" type="Texture" id=6]
 [ext_resource path="res://osb_fire.png" type="Texture" id=7]
+[ext_resource path="res://sound_hit.wav" type="AudioStream" id=8]
 
 [sub_resource type="Animation" id=1]
 
@@ -219,5 +220,13 @@ shape_visible = true
 passby_press = false
 action = "shoot"
 visibility_mode = 1
+
+[node name="sound_hit" type="AudioStreamPlayer" parent="." index="7"]
+
+stream = ExtResource( 8 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 

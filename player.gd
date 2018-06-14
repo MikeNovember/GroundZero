@@ -41,8 +41,10 @@ func _physics_process(delta):
 	linear_vel = move_and_slide(linear_vel, FLOOR_NORMAL)
 	linear_vel.y = FALLING_SPEED + extra_speed
 
-	#if is_on_floor() || is_on_ceiling() || is_on_wall():
-		#emit_signal("lose")
+	if is_on_floor() || is_on_ceiling() || is_on_wall():
+		emit_signal("lose")
+		print("AA")
+		
 
 	# Horizontal Movement
 	var target_speed = 0
@@ -62,6 +64,7 @@ func _physics_process(delta):
 
 	# Shooting
 	if Input.is_action_just_pressed("shoot") and coins > 0:
+		get_node("shoot_sound").play(0)
 		var bullet = preload("res://bullet.tscn").instance()
 		bullet.position = $sprite/bullet_shoot.global_position #use node for shoot position
 		bullet.linear_velocity = Vector2(0, BULLET_VELOCITY)

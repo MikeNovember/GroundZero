@@ -29,6 +29,7 @@ func _physics_process(delta):
 		new_anim = "walk"
 	else:
 		new_anim = "explode"
+		
 
 	if anim != new_anim:
 		anim = new_anim
@@ -47,4 +48,5 @@ func hit_by_bullet():
 	set_collision_layer_bit(0,false)
 	emit_signal("enemy_killed")
 	#$sprite.visible = false
+	get_node("explode_sound").play()
 	
