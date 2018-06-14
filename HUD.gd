@@ -17,6 +17,7 @@ func _on_win():
 	#$YouWon.visible = true
 
 func _on_lose():
+		$kill_sound.play()
 		$GameOver.visible = true
 		get_tree().paused = true
 
