@@ -60,6 +60,7 @@ func _on_finish_area_reached():
 
 func _on_enemy_killed():
 	enemies_killed = enemies_killed + 1
+	$"Killed-score".text = str(enemies_killed)
 	
 func _calc_score(enemies_killed, ammo_left,duration):
 	var ammo_factor = 100
