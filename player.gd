@@ -62,6 +62,7 @@ func _physics_process(delta):
 
 	# Shooting
 	if Input.is_action_just_pressed("shoot") and coins > 0:
+		get_node("shoot_sound").play(0)
 		var bullet = preload("res://bullet.tscn").instance()
 		bullet.position = $sprite/bullet_shoot.global_position #use node for shoot position
 		bullet.linear_velocity = Vector2(0, BULLET_VELOCITY)

@@ -21,13 +21,14 @@ func _on_lose():
 		get_tree().paused = true
 
 func _on_coin_picked():
-	print("Picked here")
+	get_node("coin_picked_sound").play(0)
 	coins = coins + 1
 	$Score.text = str(coins)
 	
 func _on_shoot():
 	print("shoot")
 	#get_node("PopupDialog").popup()
+
 	coins = coins - 1
 	$Score.text = str(coins)
 	
