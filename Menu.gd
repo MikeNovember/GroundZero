@@ -84,7 +84,8 @@ func _on_restart():
 	print("Restart")
 	get_tree().change_scene("res://stage.tscn")
 	self._on_resume()
-
+	
+	
 		
 	#if open:
 	#	if event.is_action_pressed("ui_menu"):
