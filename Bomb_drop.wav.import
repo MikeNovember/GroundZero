@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Bomb_drop.wav-460b90684cb9f33b1c1d825da1593e62.sample"
+
+[deps]
+
+source_file="res://Bomb_drop.wav"
+source_md5="d0804c565f8df321864f4d0bbbdf3f65"
+
+dest_files=[ "res://.import/Bomb_drop.wav-460b90684cb9f33b1c1d825da1593e62.sample" ]
+dest_md5="4698ba2f7962b0085e2eee098214a25e"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

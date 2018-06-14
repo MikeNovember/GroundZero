@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://stage.gd" type="Script" id=1]
 [ext_resource path="res://enemy.tscn" type="PackedScene" id=2]
@@ -19,8 +19,9 @@
 [ext_resource path="res://PlayerName.gd" type="Script" id=17]
 [ext_resource path="res://BestScoresPopup.gd" type="Script" id=18]
 [ext_resource path="res://sound_coin.wav" type="AudioStream" id=19]
-[ext_resource path="res://WorldCompleted.gd" type="Script" id=20]
-[ext_resource path="res://nyskyline.png" type="Texture" id=21]
+[ext_resource path="res://Bomb_drop.wav" type="AudioStream" id=20]
+[ext_resource path="res://WorldCompleted.gd" type="Script" id=21]
+[ext_resource path="res://nyskyline.png" type="Texture" id=22]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -613,6 +614,15 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
+[node name="bomb_drop_sound" type="AudioStreamPlayer" parent="HUD" index="9"]
+
+stream = ExtResource( 20 )
+volume_db = 24.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+_sections_unfolded = [ "Pause" ]
+
 [node name="WorldCompleted" type="Area2D" parent="." index="6"]
 
 position = Vector2( 928.232, 7794.8 )
@@ -625,7 +635,7 @@ angular_damp = 1.0
 collision_layer = 8
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 20 )
+script = ExtResource( 21 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="nyskyline" type="Sprite" parent="WorldCompleted" index="0"]
@@ -633,7 +643,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 position = Vector2( -0.957109, 38.7268 )
 rotation = 3.14159
 scale = Vector2( 0.0590554, 0.238308 )
-texture = ExtResource( 21 )
+texture = ExtResource( 22 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCompleted" index="1"]

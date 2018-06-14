@@ -41,8 +41,10 @@ func _physics_process(delta):
 	linear_vel = move_and_slide(linear_vel, FLOOR_NORMAL)
 	linear_vel.y = FALLING_SPEED + extra_speed
 
-	#if is_on_floor() || is_on_ceiling() || is_on_wall():
+#	if is_on_floor() || is_on_ceiling() || is_on_wall():
 		#emit_signal("lose")
+
+		
 
 	# Horizontal Movement
 	var target_speed = 0

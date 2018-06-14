@@ -35,6 +35,7 @@ func _on_shoot():
 func _on_finish_area_reached():
 	var duration = OS.get_ticks_msec() - start
 	#get_node("Menu").queue_free()
+	get_node("bomb_drop_sound").play()
 	$YouWon.visible = true
 	var finalScoreLabel = $YouWon.get_child(0)
 	finalScoreLabel.visible = true
