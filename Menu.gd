@@ -25,18 +25,11 @@ func _ready():
 func pointer_update():
 	pointer.set_global_position(Vector2(pointer.get_global_position().x,labels[currentLabel].get_global_position().y + 10))
 	
-#
-#func _fixed_process(delta):
-#	if open: 
-#
-#		if menu:
-#			set("visible",true)
-#			#get_tree().paused = false
-#			open = false
-
 
 func _unhandled_input(event):
-	#print(event)
+	if stopped:
+		return
+		
 	if Input.is_key_pressed(KEY_P):
 		if open :
 			_on_resume()
@@ -86,18 +79,8 @@ func _on_restart():
 	self._on_resume()
 	
 	
-		
-	#if open:
-	#	if event.is_action_pressed("ui_menu"):
-	#		menu = true
-	#	elif event.is_action_released("ui_menu"):
-	#		menu = false
-			
+var stopped = false
 
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
-
+func stop():
+	stopped = true
 

@@ -11,6 +11,7 @@ var pointer
 
 var controls
 var best_scores
+var about
 
 func _ready():
 	set_process_unhandled_key_input(true)
@@ -19,7 +20,7 @@ func _ready():
 	pointer_update()
 
 func pointer_update():
-	pointer.set_global_position(Vector2(pointer.get_global_position().x,labels[currentLabel].get_global_position().y + 10))
+	pointer.set_global_position(Vector2(pointer.get_global_position().x,labels[currentLabel].get_global_position().y + 15))
 
 func _make_sound():
 	$"toggle-sound".play()
@@ -27,8 +28,8 @@ func _make_sound():
 func _unhandled_input(event):
 	if controls and event is InputEventKey and event.is_pressed():
 		return _on_controls_disabled();
-	if best_scores and event is InputEventKey and event.is_pressed():
-		return _on_best_scores_disbled()
+	if about and event is InputEventKey and event.is_pressed():
+		return _on_about_disabled()
 	
 	if Input.is_key_pressed(KEY_DOWN) or Input.is_key_pressed(KEY_UP):
 		_make_sound()
@@ -54,6 +55,8 @@ func _unhandled_input(event):
 			_on_start()
 		elif label == "Controls":
 			_on_controls()
+		elif label == "About":
+			_on_about()
 		else:
 			_on_exit()	
 
@@ -64,13 +67,18 @@ func _on_controls():
 	controls = true
 	get_node("Controls").set("visible",true)
 	
+	
+func _on_about():
+	about = true
+	get_node("About").set("visible",true)
+	
 func _on_controls_disabled():
 	controls = false
 	get_node("Controls").set("visible",false)
 	
-func _on_best_scores_disbled():
-	best_scores = false
-	get_node("BestScores").set("visible",false)
+func _on_about_disabled():
+	about = false
+	get_node("About").set("visible",false)
 	
 func _on_best_scores():
 	best_scores = true

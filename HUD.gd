@@ -20,6 +20,8 @@ func _on_lose():
 		$AnimationPlayer.play("death")
 		$GameOver.visible = true
 		get_tree().paused = true
+		$Menu.stop()
+		$EndMenu.show()
 
 func _on_coin_picked():
 	get_node("coin_picked_sound").play(0)
