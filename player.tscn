@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://player.gd" type="Script" id=1]
 [ext_resource path="res://player/nuke.png" type="Texture" id=2]
@@ -72,13 +72,17 @@ length = 1.25
 loop = true
 step = 0.25
 
+[sub_resource type="ShaderMaterial" id=12]
+
+render_priority = 0
+
 [sub_resource type="CapsuleShape2D" id=11]
 
 custom_solver_bias = 0.0
 radius = 10.0
 height = 44.4787
 
-[node name="player" type="KinematicBody2D" index="0"]
+[node name="player" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -118,6 +122,7 @@ blend_times = [  ]
 
 [node name="camera" type="Camera2D" parent="." index="2"]
 
+material = SubResource( 12 )
 offset = Vector2( 0, 200 )
 anchor_mode = 1
 rotating = false
@@ -141,7 +146,7 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-_sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Transform", "Z Index" ]
+_sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Transform", "Visibility", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 

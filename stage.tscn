@@ -60,7 +60,7 @@ tracks/0/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 9.68749, 10 )
 
-[node name="stage" type="Node"]
+[node name="stage" type="Node" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
@@ -119,6 +119,7 @@ bus = "Master"
 [node name="HUD" type="CanvasLayer" parent="." index="5"]
 
 pause_mode = 2
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -756,9 +757,9 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="nyskyline" type="Sprite" parent="WorldCompleted" index="0"]
 
-position = Vector2( -0.957109, 38.7268 )
+position = Vector2( -18.033, 18.8981 )
 rotation = 3.14159
-scale = Vector2( 0.0590554, 0.238308 )
+scale = Vector2( 0.0305113, 0.122155 )
 texture = ExtResource( 24 )
 _sections_unfolded = [ "Transform" ]
 
