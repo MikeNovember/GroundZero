@@ -36,7 +36,7 @@ func _physics_process(delta):
 		$anim.play(anim)
 
 func _ready():
-	position = Vector2(rand_range(25.0, 785.0), rand_range(1500.0, 8750.0))
+	position = Vector2(rand_range(25.0, 785.0), rand_range(1500.0, 7500.0))
 	set_collision_layer_bit(1,true)
 	set_collision_mask_bit(0, false)
 	set_collision_mask_bit(1, false)

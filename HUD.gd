@@ -17,6 +17,7 @@ func _on_win():
 
 func _on_lose():
 		$kill_sound.play()
+		$AnimationPlayer.play("death")
 		$GameOver.visible = true
 		get_tree().paused = true
 
