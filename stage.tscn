@@ -30,7 +30,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 9.68749, 10 )
 
-[node name="stage" type="Node" index="0"]
+[node name="stage" type="Node"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
@@ -89,6 +89,7 @@ bus = "Master"
 [node name="HUD" type="CanvasLayer" parent="." index="5"]
 
 pause_mode = 2
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -706,6 +707,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -0.713431, -13.608 )
 scale = Vector2( 2.93365, 2.04677 )
 shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [connection signal="win" from="player" to="HUD" method="_on_win"]
 

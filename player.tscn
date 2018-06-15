@@ -78,7 +78,7 @@ custom_solver_bias = 0.0
 radius = 10.0
 height = 44.4787
 
-[node name="player" type="KinematicBody2D"]
+[node name="player" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -126,7 +126,7 @@ zoom = Vector2( 1, 1 )
 limit_left = 0
 limit_top = 0
 limit_right = 820
-limit_bottom = 10000000
+limit_bottom = 7800
 limit_smoothed = false
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
