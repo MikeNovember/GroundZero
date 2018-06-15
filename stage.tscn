@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://stage.gd" type="Script" id=1]
 [ext_resource path="res://enemy.tscn" type="PackedScene" id=2]
@@ -22,8 +22,52 @@
 [ext_resource path="res://Bomb.wav" type="AudioStream" id=20]
 [ext_resource path="res://grave.png" type="Texture" id=21]
 [ext_resource path="res://sound_hit.wav" type="AudioStream" id=22]
-[ext_resource path="res://WorldCompleted.gd" type="Script" id=23]
-[ext_resource path="res://nyskyline.png" type="Texture" id=24]
+[ext_resource path="res://Frames/frame_00_delay-0.08s.png" type="Texture" id=23]
+[ext_resource path="res://Frames/frame_01_delay-0.08s.png" type="Texture" id=24]
+[ext_resource path="res://Frames/frame_02_delay-0.08s.png" type="Texture" id=25]
+[ext_resource path="res://Frames/frame_03_delay-0.08s.png" type="Texture" id=26]
+[ext_resource path="res://Frames/frame_04_delay-0.08s.png" type="Texture" id=27]
+[ext_resource path="res://Frames/frame_05_delay-0.08s.png" type="Texture" id=28]
+[ext_resource path="res://Frames/frame_06_delay-0.08s.png" type="Texture" id=29]
+[ext_resource path="res://Frames/frame_07_delay-0.08s.png" type="Texture" id=30]
+[ext_resource path="res://Frames/frame_08_delay-0.08s.png" type="Texture" id=31]
+[ext_resource path="res://Frames/frame_09_delay-0.08s.png" type="Texture" id=32]
+[ext_resource path="res://Frames/frame_10_delay-0.08s.png" type="Texture" id=33]
+[ext_resource path="res://Frames/frame_11_delay-0.08s.png" type="Texture" id=34]
+[ext_resource path="res://Frames/frame_12_delay-0.08s.png" type="Texture" id=35]
+[ext_resource path="res://Frames/frame_13_delay-0.08s.png" type="Texture" id=36]
+[ext_resource path="res://Frames/frame_14_delay-0.08s.png" type="Texture" id=37]
+[ext_resource path="res://Frames/frame_15_delay-0.08s.png" type="Texture" id=38]
+[ext_resource path="res://Frames/frame_16_delay-0.08s.png" type="Texture" id=39]
+[ext_resource path="res://Frames/frame_17_delay-0.08s.png" type="Texture" id=40]
+[ext_resource path="res://Frames/frame_18_delay-0.08s.png" type="Texture" id=41]
+[ext_resource path="res://Frames/frame_19_delay-0.08s.png" type="Texture" id=42]
+[ext_resource path="res://Frames/frame_20_delay-0.08s.png" type="Texture" id=43]
+[ext_resource path="res://Frames/frame_21_delay-0.08s.png" type="Texture" id=44]
+[ext_resource path="res://Frames/frame_22_delay-0.08s.png" type="Texture" id=45]
+[ext_resource path="res://Frames/frame_23_delay-0.08s.png" type="Texture" id=46]
+[ext_resource path="res://Frames/frame_24_delay-0.08s.png" type="Texture" id=47]
+[ext_resource path="res://Frames/frame_25_delay-0.08s.png" type="Texture" id=48]
+[ext_resource path="res://Frames/frame_26_delay-0.08s.png" type="Texture" id=49]
+[ext_resource path="res://Frames/frame_27_delay-0.08s.png" type="Texture" id=50]
+[ext_resource path="res://Frames/frame_28_delay-0.08s.png" type="Texture" id=51]
+[ext_resource path="res://Frames/frame_29_delay-0.08s.png" type="Texture" id=52]
+[ext_resource path="res://Frames/frame_30_delay-0.08s.png" type="Texture" id=53]
+[ext_resource path="res://Frames/frame_31_delay-0.08s.png" type="Texture" id=54]
+[ext_resource path="res://Frames/frame_32_delay-0.08s.png" type="Texture" id=55]
+[ext_resource path="res://Frames/frame_33_delay-0.08s.png" type="Texture" id=56]
+[ext_resource path="res://Frames/frame_34_delay-0.08s.png" type="Texture" id=57]
+[ext_resource path="res://Frames/frame_35_delay-0.08s.png" type="Texture" id=58]
+[ext_resource path="res://Frames/frame_36_delay-0.08s.png" type="Texture" id=59]
+[ext_resource path="res://Frames/frame_37_delay-0.08s.png" type="Texture" id=60]
+[ext_resource path="res://Frames/frame_38_delay-0.08s.png" type="Texture" id=61]
+[ext_resource path="res://Frames/frame_39_delay-0.08s.png" type="Texture" id=62]
+[ext_resource path="res://Frames/frame_40_delay-0.08s.png" type="Texture" id=63]
+[ext_resource path="res://Frames/frame_41_delay-0.08s.png" type="Texture" id=64]
+[ext_resource path="res://Frames/frame_42_delay-0.08s.png" type="Texture" id=65]
+[ext_resource path="res://Frames/frame_43_delay-0.08s.png" type="Texture" id=66]
+[ext_resource path="res://WorldCompleted.gd" type="Script" id=67]
+[ext_resource path="res://nyskyline.png" type="Texture" id=68]
 
 [sub_resource type="Gradient" id=2]
 
@@ -54,6 +98,15 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.845333 ), Color( 1, 1, 1, 0.204392 ), Color( 1, 1, 1, 0.77898 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.883961 ), Color( 1, 1, 1, 0 ) ]
 }
+
+[sub_resource type="SpriteFrames" id=5]
+
+animations = [ {
+"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.5
+} ]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -119,7 +172,6 @@ bus = "Master"
 [node name="HUD" type="CanvasLayer" parent="." index="5"]
 
 pause_mode = 2
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -740,8 +792,20 @@ playback_speed = 1.0
 anims/death = SubResource( 4 )
 blend_times = [  ]
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="HUD" index="15"]
+
+visible = false
+modulate = Color( 1, 1, 1, 0.812157 )
+position = Vector2( 399.409, 239.65 )
+scale = Vector2( 1.16584, 0.725706 )
+frames = SubResource( 5 )
+animation = "default"
+frame = 32
+_sections_unfolded = [ "Visibility" ]
+
 [node name="WorldCompleted" type="Area2D" parent="." index="6"]
 
+editor/display_folded = true
 position = Vector2( 928.232, 7794.8 )
 scale = Vector2( 32.0442, -6.32247 )
 input_pickable = true
@@ -752,15 +816,15 @@ angular_damp = 1.0
 collision_layer = 8
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 23 )
+script = ExtResource( 67 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="nyskyline" type="Sprite" parent="WorldCompleted" index="0"]
 
-position = Vector2( -18.033, 18.8981 )
+position = Vector2( -20.6687, 13.5154 )
 rotation = 3.14159
-scale = Vector2( 0.0305113, 0.122155 )
-texture = ExtResource( 24 )
+scale = Vector2( 0.02507, 0.109678 )
+texture = ExtResource( 68 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCompleted" index="1"]
